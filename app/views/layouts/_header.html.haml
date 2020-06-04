@@ -1,22 +1,24 @@
 .header
   .container
-    .container__logo
-      FAVORITE BOOKS
-    .container__search
-      .container__search__box
-        .container__search__box__text
-          書籍名・著者名
+    .container__top
+      .container__top__logo
+        FAVORITE BOOKS
+      .container__top__search
+        .container__top__search__box
+          .container__top__search__box__text
+            書籍名・著者名
 
-    %ul.container__list
-      %li.container__list__all
-        = link_to "みんなの投稿"
-      %li.container__list__mypage
-        = link_to "マイページ"
-      %li.container__list__want
-        = link_to "読みたい本"
+    .container__bottom
+      %ul.container__bottom__list
+        %li.container__bottom__list__all
+          = link_to "みんなの投稿"
+        %li.container__bottom__list__mypage
+          = link_to "マイページ"
+        %li.container__bottom__list__want
+          = link_to "読みたい本"
 
-    %ul.container__user-box
-      %li.container__user-box__signup
-        = link_to "新規登録", "#" 
-      %li.container__user-box__login
-        = link_to "ログイン", "#"
+      %ul.container__bottom__user-box
+        %li.container__bottom__user-box__signup
+          = link_to "新規登録", "#" 
+        %li.container__bottom__user-box__login
+          = link_to "ログイン", "#"
