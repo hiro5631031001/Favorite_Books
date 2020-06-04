@@ -1,36 +1,54 @@
 .header {
   height: 72px;
-  background-color: blue;
+  background-color: grey;
+
+  a {
+  color: white;
+  text-decoration: none;
+}
+
   .container {
-    max-width: 1024px;
-    margin: 0 auto;
+    max-width: 100%;
     display: flex;
+    padding: 0 40px;
+
     &__logo {
       line-height: 72px;
       font-size: 24px;
       color: white;
-      margin-right: 12px;
+      margin-right: 28px;
     }
+
     &__search {
       display: flex;
       align-items: center;
+      margin-right: 28px;
       &__box{
         height: 32px;
         width: 200px;
         border: 1px solid white;
         &__text{
-          font-size: 12px;
+          font-size: 16px;
           color: white;
           line-height: 32px;
-
+          padding: 0 12px;
         }
       }
+    }
 
+    &__list {
+      display: flex;
+      line-height: 72px;
+      li {
+        margin-right: 12px;
+      }
     }
     &__user-box {
-      &__signup {
-
-
+      display: flex;
+      line-height: 72px;
+      margin-left: 200px;
+      li {
+        margin-right: 12px;
       }
     }
   }
