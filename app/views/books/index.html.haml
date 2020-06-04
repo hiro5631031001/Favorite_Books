@@ -1,4 +1,65 @@
-%div
-  books#index
-= @book.title
-= @book.explain
+.wrapper
+  .contents
+    .contents__all
+      %h2.contents__all__title
+        新着投稿
+      .contents__inner
+        .content
+          .content__image
+            = image_tag 'https://m.media-amazon.com/images/I/51sPGsTuF0L.jpg', alt: '', height: '200', width: '150', class: ''
+          .content__in
+            .content__in__title
+              嫌われる勇気
+            .content__in__author
+              岸見一郎
+            .content__in__explain
+              レビュー数
+        
+        .content
+          .content__image
+            = image_tag 'https://m.media-amazon.com/images/I/51sPGsTuF0L.jpg', alt: '', height: '200', width: '150', class: ''
+          .content__in
+            .content__in__title
+              嫌われる勇気
+            .content__in__author
+              岸見一郎
+            .content__in__explain
+              レビュー数
+
+        .content
+          .content__image
+            = image_tag 'https://m.media-amazon.com/images/I/51sPGsTuF0L.jpg', alt: '', height: '200', width: '150', class: ''
+          .content__in
+            .content__in__title
+              嫌われる勇気
+            .content__in__author
+              岸見一郎
+            .content__in__explain
+              レビュー数
+          
+
+    .contents__categories
+      .category
+        %h2.category__title
+          カテゴリー？？
+        .category__inner
+          .content
+            .content__image
+              = image_tag 'https://m.media-amazon.com/images/I/51sPGsTuF0L.jpg', alt: '', height: '200', width: '150', class: ''
+            .content__in
+              .content__in__title
+                嫌われる勇気
+              .content__in__author
+                岸見一郎
+              .content__in__explain
+                感想
+        
+      -# %h2.contents__category__2
+      -#   歴史・地理
+      -# %h2.contents__category__3
+      -#   社会
+      -# %h2.contents__category__5
+      -#   スポーツ
+      -# %h2.contents__category__6
+      -#   漫画
+
