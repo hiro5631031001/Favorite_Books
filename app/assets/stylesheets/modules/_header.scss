@@ -22,8 +22,8 @@
         margin-right: 28px;
       }
       &__search {
-        margin-right: 28px;
         // width: 80%;
+        margin-right: 28px;
         &__box{
           height: 28px;
           width: 100%;
@@ -41,6 +41,7 @@
     &__bottom {
       width: 100%;
       display: flex;
+      justify-content: space-evenly;
       margin-bottom: 12px;
       padding-top: 16px;
       
@@ -52,7 +53,6 @@
       }
       &__user-box {
         display: flex;
-        margin-left: 200px;
         li {
           margin-right: 12px;
         }

@@ -7,6 +7,12 @@
         .container__top__search__box
           .container__top__search__box__text
             書籍名・著者名
+      .search-box
+        %form
+          %input{type: "text", class: "search-box__text", placeholder: "本の名前・著者名"}
+          %button{type: "submit", class: "search-box__btn"}
+            .search-icon
+              %img.icon{ src: "/assets/icon-search 1.png",height: '15',width: '15'}
 
     .container__bottom
       %ul.container__bottom__list
