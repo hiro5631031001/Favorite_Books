@@ -1,19 +1,22 @@
 .header
   .container
     .container__logo
-      FAVBORITE BOOKS
+      FAVORITE BOOKS
     .container__search
       .container__search__box
         .container__search__box__text
           書籍名・著者名
 
+    %ul.container__list
+      %li.container__list__all
+        = link_to "みんなの投稿"
+      %li.container__list__mypage
+        = link_to "マイページ"
+      %li.container__list__want
+        = link_to "読みたい本"
 
     %ul.container__user-box
       %li.container__user-box__signup
+        = link_to "新規登録", "#" 
       %li.container__user-box__login
-    
-
-      -# %li.head__in__nav__right__new
-      -#   =link_to "新規登録", new_user_registration_path
-      -# %li.head__in__nav__right__login
-      -#   =link_to "ログイン", new_user_session_path
+        = link_to "ログイン", "#"
