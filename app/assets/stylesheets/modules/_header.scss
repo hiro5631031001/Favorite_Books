@@ -1,0 +1,74 @@
+.header {
+  height: 84px;
+  background-color: grey;
+
+  a {
+  color: white;
+  text-decoration: none;
+}
+
+  .container {
+    width: 100%;
+    padding: 0 60px;
+    box-sizing: border-box;
+
+    &__top {
+      padding-top: 12px;
+      width: 100%;
+      display: flex;
+      &__logo {
+        font-size: 24px;
+        color: white;
+        margin-right: 28px;
+      }
+      &__search {
+        // width: 80%;
+        margin-right: 28px;
+        &__box{
+          height: 28px;
+          width: 100%;
+          border: 1px solid white;
+          &__text{
+            font-size: 16px;
+            color: white;
+            line-height: 28px;
+            padding: 0 12px;
+          }
+        }
+      }
+      .search-box {
+        &__text {
+
+        }
+        &__btn {
+          &__icon{
+            &__img{
+
+            }
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 12px;
+      padding-top: 16px;
+      
+      &__list {
+        display: flex;
+        li {
+          margin-right: 12px;
+        }
+      }
+      &__user-box {
+        display: flex;
+        li {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.header
+  .container
+    .container__top
+      .container__top__logo
+        FAVORITE BOOKS
+      .container__top__search
+        .container__top__search__box
+          .container__top__search__box__text
+            書籍名・著者名
+      .search-box
+        %form
+          %input{type: "text", class: "search-box__text", placeholder: "本の名前・著者名"}
+          %button{type: "submit", class: "search-box__btn"}
+            .search-box__btn__icon
+              %img.icon{ src: "/assets/icon-search 1.png",class: "search-icon__btn__icon__img", height: '15',width: '15'}
+
+    .container__bottom
+      %ul.container__bottom__list
+        %li.container__bottom__list__all
+          = link_to "みんなの投稿"
+        %li.container__bottom__list__mypage
+          = link_to "マイページ"
+        %li.container__bottom__list__want
+          = link_to "読みたい本"
+
+      %ul.container__bottom__user-box
+        %li.container__bottom__user-box__signup
+          = link_to "新規登録", "#" 
+        %li.container__bottom__user-box__login
+          = link_to "ログイン", "#"
