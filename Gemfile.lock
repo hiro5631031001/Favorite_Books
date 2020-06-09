@@ -165,6 +165,7 @@ GEM
       thor (>= 0.19.0, < 2.0)
     raindrops (0.19.1)
     rake (13.0.1)
+    rakuten_web_service (1.12.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -247,6 +248,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.3)
+  rakuten_web_service
   sassc-rails
   selenium-webdriver
   spring
