@@ -2,11 +2,7 @@
   .container
     .container__top
       .container__top__logo
-        FAVORITE BOOKS
-      .container__top__search
-        .container__top__search__box
-          .container__top__search__box__text
-            書籍名・著者名
+        = link_to " FAVORITE BOOKS",root_path
       .search-box
         = form_with url: books_search_path, method: :get, local: true do |f|
           .form-group
