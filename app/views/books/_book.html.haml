@@ -2,13 +2,24 @@
   %p 書籍検索結果
   .books
     - @books.each do |book|
-      .content
-        .content__image
-          = link_to (image_tag(book.large_image_url)), book.item_url, class: 'content__image__img'
-        .content__in
-          .content__in__title
-            = book.title
-          .content__in__author
-            = "著  者：#{book.author}"
-          .content__in__explain
-            = "出版社：#{book.publisher_name}"
+      = form_with model: @book, url: books_path, method: :post, local: true do |f|
+        .content
+          .content__image
+            = link_to (image_tag(book.image_url)), book.url, class: 'content__image__img'
+          .content__in
+            .content__in__title
+              = book.title
+            .content__in__author
+              = "著者：#{book.author}"
+            .content__in__explain
+              = "出版社：#{book.publisher_name}"
+              = f.hidden_field :isbn, value: "#{book.isbn}"
+              = f.hidden_field :url, value:  "#{book.url}"
+              = f.hidden_field :image_url, value: "#{book.image_url}"
+              = f.hidden_field :title, value: "#{book.title}"
+              = f.hidden_field :author, value: "#{book.author}"
+              = f.hidden_field :publisher_name, value: "#{book.publisher_name}"
+              = f.submit 'Save Book'
+
+            
+          
