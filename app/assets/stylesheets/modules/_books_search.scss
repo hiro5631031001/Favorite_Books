@@ -1,0 +1,36 @@
+p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search-result {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 32px;
+  text-align: center;
+  .books {
+    width: 100%;
+    .content {
+      display: flex;
+      margin-top: 32px;
+      text-align: left;
+      &__image {
+        img {
+          width: 150px;
+          height: 200px;
+        }
+      }
+      &__in {
+        margin-left: 16px;
+        &__title {
+        }
+        &__author {
+          padding-top: 8px;
+        }
+        &__explain {
+
+        }
+      }
+    }
+  }
+}
