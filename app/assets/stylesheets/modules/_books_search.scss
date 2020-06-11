@@ -15,7 +15,9 @@ p {
       margin-top: 32px;
       text-align: left;
       &__image {
-        &__img {
+        img {
+          width: 150px;
+          height: 200px;
         }
       }
       &__in {
