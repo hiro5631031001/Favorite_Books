@@ -1,0 +1,38 @@
+.pageTitle {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.wrap {
+  .main_area {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    border:  solid 1px #dcdcdc;
+    padding: 16px;
+    &__image {
+      margin-right: 16px;
+      .img_box {
+      }
+    }
+    &__info {
+      &__title {
+        font-size: 34px;
+      }
+      &_author{
+      }
+      &__publisher_name {
+
+      }
+      &__rate {
+        margin-top: 4px;
+        height: 32px;
+        width: 200px;
+        background-color: chocolate;
+      }
+    }
+  }
+}
+
+
