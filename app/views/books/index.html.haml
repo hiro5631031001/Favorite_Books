@@ -4,41 +4,18 @@
       %h2.contents__all__title
         新着投稿
       .contents__inner
-        = link_to "#" do
-          .content
-            .content__image
-              = image_tag 'https://m.media-amazon.com/images/I/51sPGsTuF0L.jpg', alt: '', height: '200', width: '150', class: ''
-            .content__in
-              .content__in__title
-                嫌われる勇気
-              .content__in__author
-                著者：岸見一郎
-              .content__in__explain
-                レビュー数
-        = link_to "#" do
-          .content
-            .content__image
-              = image_tag 'https://m.media-amazon.com/images/I/51mt2TcHBGL.jpg', alt: '', height: '200', width: '150', class: ''
-            .content__in
-              .content__in__title
-                哲学と宗教全史
-              .content__in__author
-                著者：出口直治
-              .content__in__explain
-                レビュー数
-
-        = link_to "#" do
-          .content
-            .content__image
-              = image_tag 'https://m.media-amazon.com/images/I/51j7Ad8w1oL.jpg', alt: '', height: '200', width: '150', class: ''
-            .content__in
-              .content__in__title
-                「働き方」の教科書―人生と仕事とお金の基本
-              .content__in__author
-                著者：出口治明
-              .content__in__explain
-                レビュー数
-          
+        - @books.each do |book|
+          = link_to book_path(book.id) do
+            .content
+              .content__image
+                = image_tag book.image_url, alt: '', height: '200', width: '150', class: ''
+              .content__in
+                .content__in__title
+                  = book.title
+                .content__in__author
+                  = "著者: #{book.author}"
+                .content__in__explain
+                  = "出版社: #{book.publisher_name}"
 
     -# .contents__categories
     -#   .category

@@ -1,0 +1,21 @@
+%h1.pageTitle
+  書籍詳細ページ
+
+.wrap
+  .main_area
+    .main_area__image
+      .img_box
+        = link_to @book.url do
+          = image_tag @book.image_url, alt: '', height: '200', width: '150', class: ''
+      .add-btn
+    .main_area__info
+      %h1.main_area__info__title
+        = @book.title
+      .main_area__info__author
+        = "著者：#{@book.author}"
+      .main_area__info__publisher_name
+        = "出版社：#{@book.publisher_name}"
+      .main_area__info__rate
+        レビュー点数入力予定
+
+    

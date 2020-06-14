@@ -1,16 +1,11 @@
 class BooksController < ApplicationController
   def index
-    # @book = Book.find(1)
+    @books = Book.all
   end
 
   def show
+    @book = Book.find(params[:id])
   end
-
-  # def new
-  #   if params[:keyword]
-  #     @books = RakutenWebService::Books::Book.search(title: params[:keyword])
-  #   end
-  # end
 
   def new
     @books = []
@@ -36,6 +31,7 @@ class BooksController < ApplicationController
       results = RakutenWebService::Books::Book.search(isbn: @book.isbn)
       @book = Book.new(read(results.first))
       @book.save
+      redirect_to root_path
     end
  end
 
