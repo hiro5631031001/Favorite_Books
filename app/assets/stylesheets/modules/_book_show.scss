@@ -6,7 +6,7 @@
 
 .wrap {
   .main_area {
-    width: 700px;
+    width: 730px;
     margin: 0 auto;
     display: flex;
     border:  solid 1px #dcdcdc;
@@ -32,6 +32,19 @@
         background-color: chocolate;
       }
     }
+  }
+}
+
+.d-btn {
+  height: 28px;
+  width: 60px;
+  background-color: gray;
+  text-align: center;
+  line-height: 28px;
+  margin-top: 8px;
+  a {
+    text-decoration: none;
+    color: lavender;
   }
 }
 
