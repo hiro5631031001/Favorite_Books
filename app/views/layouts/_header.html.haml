@@ -19,7 +19,10 @@
           = link_to "読みたい本"
 
       %ul.container__bottom__user-box
-        %li.container__bottom__user-box__signup
-          = link_to "新規登録", new_user_registration_path, class: "" 
-        %li.container__bottom__user-box__login
-          = link_to "ログイン", new_user_session_path, class: ""
+        - if user_signed_in?
+          = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "" 
+        - else
+          %li.container__bottom__user-box__signup
+            = link_to "新規登録", new_user_registration_path, class: "" 
+          %li.container__bottom__user-box__login
+            = link_to "ログイン", new_user_session_path, class: ""
