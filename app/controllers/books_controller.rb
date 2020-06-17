@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     @books = Book.all
   end
@@ -60,7 +61,7 @@ class BooksController < ApplicationController
 
   private
   def books_params
-    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url)
+    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url).merge(user_id: current_user.id)
   end
 
   def read(result)
