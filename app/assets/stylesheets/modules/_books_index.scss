@@ -6,11 +6,11 @@
   }
 
   .contents {
-    padding-top: 40px;
+    padding-top: 28px;
     &__all {
       &__title {
         text-align: center;
-        font-size: 40px;
+        font-size: 28px;
         padding-bottom: 20px;
       }
     }
@@ -18,14 +18,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: left;
+      margin: 0 auto;
+      max-width: 1000px;
       .content {
         display: flex;
+        margin-bottom: 16px;
         margin-right: 16px;
+        width: 480px;
         &__image {
           margin-right: 8px;
         }
         &__in {
-          width: 150px;
+          width: 480px;
           height: 200px;
           &__title {
             font-size: 16px;
@@ -46,7 +50,7 @@
         &__title {
           text-align: center;
           font-size: 40px;
-          padding: 40px 0 ;
+          padding: 28px 0 ;
         }
         &__inner {
           display: flex;
