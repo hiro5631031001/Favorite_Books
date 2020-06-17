@@ -17,8 +17,6 @@
         = "出版社：#{@book.publisher_name}"
       .main_area__info__rate
         レビュー点数入力予定
-      - if user_signed_in?
+      - if user_signed_in? && current_user.id == @book.user_id
         .d-btn
           = link_to "削除", book_path(@book), method: :delete
-
-    
