@@ -36,6 +36,7 @@ class BooksController < ApplicationController
     #   @book.save
     #   redirect_to root_path
     # end
+
     @book = Book.new(books_params)
     @book.save
     redirect_to root_path
