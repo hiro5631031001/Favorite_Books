@@ -20,9 +20,13 @@ class BooksController < ApplicationController
  end
 
   def edit
+    @book = Book.find(params[:id])
   end
 
   def update
+    @book = Book.find(params[:id]) 
+    @book.update(book_params)
+    redirect_to root_path
   end
 
   def destroy

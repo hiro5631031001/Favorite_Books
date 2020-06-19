@@ -37,46 +37,38 @@
     -#   - @book.errors.full_messages_for(:category).each do |message|
     -#     %div
     -#       = message
-    .book-detail__buydate-input
-      = f.date_select :buy_date, {}, class: ""
-      -# = sprintf(f.date_select(:buy_date, prefix:'buy_date', with_css_classes:'select-box', selected: Date.today,use_month_numbers:true, start_year:Time.now.year, end_year:Time.now.year-10, date_separator:'%s'),'年','月')+'日'
+
+    - if params[:controller] == "books" && params[:action] == "new" || params[:controller] == "books" && params[:action] == "create"
+      .book-detail__top.form-content
+        購入日
+      .book-detail__buydate-input
+        = f.date_select :buy_date, {}, class: ""
+        -# != sprintf(f.date_select(:buy_date, prefix:'buy_date', with_css_classes:'select-box', selected: Date.today,use_month_numbers:true, start_year:Time.now.year, end_year:Time.now.year-10, date_separator:'%s'),'年','月')+'日'
+      -# .error-text
+      -#   - @book.errors.full_messages_for(:buy_date).each do |message|
+      -#     %div
+      -#       = message
+    - else
+      .book-detail__top.form-content
+        購入日
+      .book-detail__buydate-input
+        = f.date_select :buy_date, {}, selected: @book.buy_date,class: ""
+        -# != sprintf(f.date_select(:buy_date, prefix:'buy_date', with_css_classes:'select-box', selected: @book.buy_date,use_month_numbers:true, start_year:Time.now.year, end_year:Time.now.year-10, date_separator:'%s'),'年','月')+'日'
+      -# .error-text
+      -#   - @book.errors.full_messages_for(:buy_date).each do |message|
+      -#     %div
+      -#       = message
+  - if params[:controller] == "books" && params[:action] == "new" || params[:controller] == "books" && params[:action] == "create"
     .btn-box
       .btn-box__book-new
         = f.submit " 本を登録する ", class: "submit-btn text-line-none"
       .btn-box__back
         = link_to :back, class: "white-btn margin-left-40 text-line-none" do
           もどる
-
-
-  -#   - if params[:controller] == "books" && params[:action] == "new" || params[:controller] == "books" && params[:action] == "create"
-  -#     .book-detail__top.form-content
-  -#       購入日
-  -#     .book-detail__buydate-input
-  -#       != sprintf(f.date_select(:buy_date, prefix:'buy_date', with_css_classes:'select-box', selected: Date.today,use_month_numbers:true, start_year:Time.now.year, end_year:Time.now.year-10, date_separator:'%s'),'年','月')+'日'
-  -#     .error-text
-  -#       - @book.errors.full_messages_for(:buy_date).each do |message|
-  -#         %div
-  -#           = message
-  -#   - else
-  -#     .book-detail__top.form-content
-  -#       購入日
-  -#     .book-detail__buydate-input
-  -#       != sprintf(f.date_select(:buy_date, prefix:'buy_date', with_css_classes:'select-box', selected: @book.buy_date,use_month_numbers:true, start_year:Time.now.year, end_year:Time.now.year-10, date_separator:'%s'),'年','月')+'日'
-  -#     .error-text
-  -#       - @book.errors.full_messages_for(:buy_date).each do |message|
-  -#         %div
-  -#           = message
-  -# - if params[:controller] == "books" && params[:action] == "new" || params[:controller] == "books" && params[:action] == "create"
-  -#   .btn-box
-  -#     .btn-box__book-new
-  -#       = f.submit " 本を登録する ", class: "submit-btn text-line-none"
-  -#     .btn-box__back
-  -#       = link_to :back, class: "white-btn margin-left-40 text-line-none" do
-  -#         もどる
-  -# - else
-  -#   .btn-box
-  -#     .btn-box__book-new
-  -#       = f.submit " 編集を登録する ", class: "submit-btn text-line-none"
-  -#     .btn-box__back
-  -#       = link_to :back, class: "white-btn margin-left-40 text-line-none" do
-  -#         もどる  
+  - else
+    .btn-box
+      .btn-box__book-new
+        = f.submit " 編集を登録する ", class: "submit-btn text-line-none"
+      .btn-box__back
+        = link_to :back, class: "white-btn margin-left-40 text-line-none" do
+          もどる  
