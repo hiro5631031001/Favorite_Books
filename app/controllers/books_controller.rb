@@ -9,36 +9,13 @@ class BooksController < ApplicationController
   end
 
   def new
-    @books = []
-
-    @title = params[:title]
-    if @title.present?
-      results = RakutenWebService::Books::Book.search({
-        title: @title,
-        hits: 20,
-      })
-
-      results.each do |result|
-        book = Book.new(read(result))
-        @books << book
-      end
-    end
+    @book = Book.new
   end
 
   def create
-    # @book = Book.find_or_initialize_by(isbn: params[:isbn])
-
-    # binding.pry
-
-    # unless @book.persisted?
-    #   results = RakutenWebService::Books::Book.search(isbn: @book.isbn)
-    #   @book = Book.new(read(results.first), books_params)
-    #   @book.save
-    #   redirect_to root_path
-    # end
-
-    @book = Book.new(books_params)
-    @book.save
+    params[:book][:buy_date] = @buy_date.to_s
+    @book = Book.new(book_params)
+    @book.save!(book_params)
     redirect_to root_path
  end
 
@@ -61,8 +38,15 @@ class BooksController < ApplicationController
   # end
 
   private
-  def books_params
-    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url).merge(user_id: current_user.id)
+  def book_params
+    params.require(:book).permit(
+      :title,
+      :author,
+      :publisher,
+      :category,
+      :buy_date,
+      :image
+    ).merge(user_id: current_user.id)
   end
 
   def read(result)
