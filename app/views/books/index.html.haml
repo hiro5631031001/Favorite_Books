@@ -2,7 +2,7 @@
   .contents
     .contents__all
       %h2.contents__all__title
-        新着投稿
+        みんなの投稿
       .contents__inner
         - @books.each do |book|
           = link_to book_path(book.id) do
@@ -16,6 +16,8 @@
                   = "著者: #{book.author}"
                 .content__in__explain
                   = "出版社: #{book.publisher_name}"
+                .content__in__user-name
+                  = "投稿者: #{book.user.nickname}"
 
     -# .contents__categories
     -#   .category

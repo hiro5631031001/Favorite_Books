@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     @books = Book.all
   end
@@ -25,14 +26,20 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.find_or_initialize_by(isbn: params[:isbn])
+    # @book = Book.find_or_initialize_by(isbn: params[:isbn])
 
-    unless @book.persisted?
-      results = RakutenWebService::Books::Book.search(isbn: @book.isbn)
-      @book = Book.new(read(results.first))
-      @book.save
-      redirect_to root_path
-    end
+    # binding.pry
+
+    # unless @book.persisted?
+    #   results = RakutenWebService::Books::Book.search(isbn: @book.isbn)
+    #   @book = Book.new(read(results.first), books_params)
+    #   @book.save
+    #   redirect_to root_path
+    # end
+
+    @book = Book.new(books_params)
+    @book.save
+    redirect_to root_path
  end
 
   def edit
@@ -42,17 +49,20 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to root_path
   end
 
-  def search
-    if params[:keyword]
-      @books = RakutenWebService::Books::Book.search(title: params[:keyword])
-    end
-  end
+  # def search
+  #   if params[:keyword]
+  #     @books = RakutenWebService::Books::Book.search(title: params[:keyword])
+  #   end
+  # end
 
   private
   def books_params
-    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url)
+    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url).merge(user_id: current_user.id)
   end
 
   def read(result)
