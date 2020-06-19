@@ -15,6 +15,10 @@
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email",class:"field__box"
       .field
+        = f.label :birth_day
+        %br/
+        = f.date_select :birth_day, prompt: "---",start_year:2020, end_year:1920, class: ""
+      .field
         = f.label :password
         - if @minimum_password_length
           %em
