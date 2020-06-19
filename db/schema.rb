@@ -14,12 +14,12 @@ ActiveRecord::Schema.define(version: 2020_06_16_144049) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "author"
-    t.text "explain"
-    t.string "url"
-    t.bigint "isbn"
-    t.string "image_url"
-    t.string "publisher_name"
+    t.string "author", null: false
+    t.string "publisher", null: false
+    t.integer "category", null: false
+    t.integer "status", default: 0, null: false
+    t.string "image"
+    t.date "buy_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_06_16_144049) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.date "birthday", null: false
+    t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
