@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    params[:book][:buy_date] = @buy_date.to_s
+    # params[:book][:buy_date] = @buy_date.to_s
     @book = Book.new(book_params)
     @book.save!(book_params)
     redirect_to root_path
@@ -53,23 +53,23 @@ class BooksController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
-  def read(result)
-    title = result['title']
-    author = result['author']
-    url = result['itemUrl']
-    isbn = result['isbn']
-    publisher_name = result['publisherName']
-    image_url = result['mediumImageUrl'].gsub('?_ex=120x120', '')
+  # def read(result)
+  #   title = result['title']
+  #   author = result['author']
+  #   url = result['itemUrl']
+  #   isbn = result['isbn']
+  #   publisher_name = result['publisherName']
+  #   image_url = result['mediumImageUrl'].gsub('?_ex=120x120', '')
 
-    {
-      title: title,
-      author: author,
-      url: url,
-      isbn: isbn,
-      publisher_name: publisher_name,
-      image_url: image_url
-    }
+  #   {
+  #     title: title,
+  #     author: author,
+  #     url: url,
+  #     isbn: isbn,
+  #     publisher_name: publisher_name,
+  #     image_url: image_url
+  #   }
 
-  end
+  # end
 
 end
