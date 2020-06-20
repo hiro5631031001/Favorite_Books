@@ -1,24 +1,47 @@
-# README
+# 概要
+購入した書籍を登録・管理するアプリです。
+書籍情報をアプリに保存し、読書のアウトプット、読書記録管理を目的に作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DB設計
+＜作成中＞
 
-Things you may want to cover:
+## 制作背景
+昔から本を読むことが好きで、書籍に関するアプリ作成を思い立ちました。
+自分自身、読書好きの人は、他人がどんな本を読んで、どんな箇所に興味を持ったのか？について関心があると感じていたので、その関心をお互いに共有、シェアできるアプリを開発してみたいと思い、作成を開始しました。
 
-* Ruby version
+また、電子書籍での読書機会が増え、どの書籍をいつ購入したか、管理する意味でも、読書管理を目に見える形で行えることを大切に開発を行っています。
 
-* System dependencies
+# 機能一覧
+・ユーザー登録、編集機能
+・ログイン、ログアウト機能
+・本の登録、編集、削除機能
 
-* Configuration
+＜実装予定＞
+・感想の登録・編集・削除
+・読みたい書籍リスト登録・削除
+・ユーザーフォロー機能
+・検索機能
+・読書履歴の確認
+・フォローユーザーの新規登録の通知機能
 
-* Database creation
+# 使用技術
+## フロントサイド
+・HTML (haml)
+・css (sass)
+・JavaScript (Jquery)
 
-* Database initialization
+## バックエンド
+・Ruby (2.5.1)
+・Rails (5.2.3)
 
-* How to run the test suite
+## ユーザー関連
+・device
 
-* Services (job queues, cache servers, search engines, etc.)
+## 画像関連
+・carrierwave
 
-* Deployment instructions
+## デプロイ
+.AWS EC2 S3
 
-* ...
+
+

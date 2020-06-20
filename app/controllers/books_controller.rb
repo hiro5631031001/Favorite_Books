@@ -9,43 +9,24 @@ class BooksController < ApplicationController
   end
 
   def new
-    @books = []
-
-    @title = params[:title]
-    if @title.present?
-      results = RakutenWebService::Books::Book.search({
-        title: @title,
-        hits: 20,
-      })
-
-      results.each do |result|
-        book = Book.new(read(result))
-        @books << book
-      end
-    end
+    @book = Book.new
   end
 
   def create
-    # @book = Book.find_or_initialize_by(isbn: params[:isbn])
-
-    # binding.pry
-
-    # unless @book.persisted?
-    #   results = RakutenWebService::Books::Book.search(isbn: @book.isbn)
-    #   @book = Book.new(read(results.first), books_params)
-    #   @book.save
-    #   redirect_to root_path
-    # end
-
-    @book = Book.new(books_params)
-    @book.save
+    # params[:book][:buy_date] = @buy_date.to_s
+    @book = Book.new(book_params)
+    @book.save!(book_params)
     redirect_to root_path
  end
 
   def edit
+    @book = Book.find(params[:id])
   end
 
   def update
+    @book = Book.find(params[:id]) 
+    @book.update(book_params)
+    redirect_to root_path
   end
 
   def destroy
@@ -61,27 +42,33 @@ class BooksController < ApplicationController
   # end
 
   private
-  def books_params
-    params.permit(:image_url, :title, :author, :publisher_name, :isbn,:url).merge(user_id: current_user.id)
+  def book_params
+    params.require(:book).permit(:title,
+                                  :author,
+                                  :publisher,
+                                  :category,
+                                  :buy_date,
+                                  :image
+                                ).merge(user_id: current_user.id)
   end
 
-  def read(result)
-    title = result['title']
-    author = result['author']
-    url = result['itemUrl']
-    isbn = result['isbn']
-    publisher_name = result['publisherName']
-    image_url = result['mediumImageUrl'].gsub('?_ex=120x120', '')
+  # def read(result)
+  #   title = result['title']
+  #   author = result['author']
+  #   url = result['itemUrl']
+  #   isbn = result['isbn']
+  #   publisher_name = result['publisherName']
+  #   image_url = result['mediumImageUrl'].gsub('?_ex=120x120', '')
 
-    {
-      title: title,
-      author: author,
-      url: url,
-      isbn: isbn,
-      publisher_name: publisher_name,
-      image_url: image_url
-    }
+  #   {
+  #     title: title,
+  #     author: author,
+  #     url: url,
+  #     isbn: isbn,
+  #     publisher_name: publisher_name,
+  #     image_url: image_url
+  #   }
 
-  end
+  # end
 
 end
