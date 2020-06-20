@@ -11,6 +11,10 @@
         %br/
         = f.text_field :nickname, autofocus: true,  placeholder: "例）ニックネーム", class:"field__box"
       .field
+        = f.label :image
+        %br/
+        = f.file_field :image
+      .field
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email",class:"field__box"
