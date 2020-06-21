@@ -4,18 +4,20 @@
 
   .box-form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
+
+      .field.form-content
         = f.label :email
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class:"field__box"
-      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", class:"text-input"
+
+      .field.form-content
         = f.label :password
         %br/
-        = f.password_field :password, autocomplete: "current-password", class:"field__box"
+        = f.password_field :password, autocomplete: "current-password", class:"text-input"
       - if devise_mapping.rememberable?
-        .field
+        .field.form-content
           = f.check_box :remember_me
           = f.label :remember_me
+
       .actions
-        = f.submit "Log in", class: "actions__btn"
-      = render "devise/shared/links"
+        = f.submit "Log in", class: "submit-btn"
