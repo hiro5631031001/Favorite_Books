@@ -1,0 +1,2 @@
+class Recollection < ApplicationRecord
+end
