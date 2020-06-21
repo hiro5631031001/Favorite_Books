@@ -6,33 +6,33 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
 
-      .field
+      .field.form-content
         = f.label :nickname
         %br/
-        = f.text_field :nickname, autofocus: true,  placeholder: "例）ニックネーム", class:"field__box"
-      .field
-        = f.label :image
+        = f.text_field :nickname, autofocus: true,  placeholder: "例）ニックネーム", class:"text-input"
+      .field.form-content
+        avator
         %br/
         = f.file_field :image
-      .field
+      .field.form-content
         = f.label :email
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email",class:"field__box"
-      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"text-input"
+      .field.form-content
         = f.label :birth_day
         %br/
-        = f.date_select :birth_day, prompt: "---",start_year:2020, end_year:1920, class: ""
-      .field
+        .birthday-box
+          = f.date_select :birth_day, prompt: "---", start_year:2020, end_year:1920, class: "select-box"
+      .field.form-content
         = f.label :password
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
         %br/
-        = f.password_field :password, autocomplete: "new-password",class:"field__box"
-      .field
+        = f.password_field :password, autocomplete: "new-password",class:"text-input"
+      .field.form-content
         = f.label :password_confirmation
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password",class:"field__box"
+        = f.password_field :password_confirmation, autocomplete: "new-password",class:"text-input"
       .actions
-        = f.submit "Sign up", class: "actions__btn"
-    = render "devise/shared/links"
+        = f.submit "Sign up", class: "submit-btn"

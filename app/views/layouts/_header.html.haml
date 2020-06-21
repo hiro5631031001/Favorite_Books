@@ -12,15 +12,20 @@
     .container__bottom
       %ul.container__bottom__list
         %li.container__bottom__list__all
-          = link_to "みんなの投稿"
-        %li.container__bottom__list__mypage
-          = link_to "マイページ"
-        %li.container__bottom__list__want
-          = link_to "読みたい本"
+          = link_to "みんなの投稿", root_path
+        - if user_signed_in?
+          %li.container__bottom__list__post
+            = link_to "書籍登録",new_book_path
+          %li.container__bottom__list__want
+            = link_to "読みたい本"
 
       %ul.container__bottom__user-box
         - if user_signed_in?
-          = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "" 
+          %li.container__bottom__list__mypage
+            = link_to "マイページ" 
+          %li.container__bottom__list__logout
+            = link_to "ログアウト",destroy_user_session_path, method: :delete, class: ""
+
         - else
           %li.container__bottom__user-box__signup
             = link_to "新規登録", new_user_registration_path, class: "" 

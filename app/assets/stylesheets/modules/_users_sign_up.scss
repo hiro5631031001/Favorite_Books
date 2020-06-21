@@ -1,34 +1,38 @@
 .box {
-  width: 480px;
+  width: 400px;
   margin: 0 auto;
   margin-top: 32px;
   .box-header {
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
   }
-  .box-form {
-    .field {
-      border: none;
-      color: black;
-      text-align: left;
-      width: 300px;
-      margin: 0 auto;
-      padding-top: 20px;
-      label{
-        font-size: 20px;
-      }
-      &__box {
-        width: 280px;
-        height: 48px;
-      }
-    }
-    .actions {
-      text-align: center;
-      padding-top: 20px;
-      &__btn {
-        width: 160px;
-        height: 40px;
-      }
-    }
-  }
+}
+//   .box-form {
+//     width: 100%;
+//     // width: 400px;
+//     .field {
+//       // border: none;
+//       // color: black;
+//       // text-align: left;
+//       // width: 300px;
+//       // margin: 0 auto;
+//       // padding-top: 20px;
+//       label{
+//         // font-size: 20px;
+//       }
+//       // &__box {
+//       //   // width: 280px;
+//       //   // height: 48px;
+//       // }
+//     }
+//     .actions {
+//       text-align: center;
+//       padding-top: 20px;
+//     }
+//   }
+// }
+
+.actions {
+  text-align: center;
+  padding-top: 20px;
 }

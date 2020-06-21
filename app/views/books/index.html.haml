@@ -1,5 +1,3 @@
-= link_to "書籍を登録する", new_book_path
-
 .wrapper
   .contents
     .contents__all
@@ -10,16 +8,19 @@
           = link_to book_path(book.id) do
             .content
               .content__image
-                = image_tag book.image.url, alt: '', height: '200', width: '150', class: ''
+                = image_tag book.image.url, alt: '', height: '200', width: '135', class: ''
               .content__in
                 .content__in__title
                   = book.title
                 .content__in__author
                   = "著者: #{book.author}"
-                .content__in__explain
+                .content__in__publisher
                   = "出版社: #{book.publisher}"
                 .content__in__user-name
                   = "投稿者: #{book.user.nickname}"
+                .content__in__user-image
+                  - if book.user.image?
+                    = image_tag book.user.image.url, alt: '', height: '68', width: '68', class: ''
 
     -# .contents__categories
     -#   .category
