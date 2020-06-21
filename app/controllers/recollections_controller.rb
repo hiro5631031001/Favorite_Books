@@ -10,7 +10,7 @@ class RecollectionsController < ApplicationController
     @recollection = Recollection.create(recollection_params)
     if @recollection.save
       @recollection.book.book_read
-      redirect_to book_recollection_path(@book)
+      redirect_to root_path
     else
       render 'new'
     end
@@ -19,7 +19,7 @@ class RecollectionsController < ApplicationController
   private
 
   def recollection_params
-    params.require(:impression).permit(
+    params.require(:recollection).permit(
                                         :read_term,
                                         :readed_day,
                                         :point,
