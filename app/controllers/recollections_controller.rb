@@ -6,6 +6,12 @@ class RecollectionsController < ApplicationController
 
   def create
     @recollection = Recollection.create(recollection_params)
+    if @recollection.save
+      @recollection.book.book_read
+      redirect_to book_recollection_path(@book)
+    else
+      render 'new'
+    end
   end
 
   private
