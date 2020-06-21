@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
+  has_many :recollections, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
