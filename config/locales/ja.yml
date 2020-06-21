@@ -217,57 +217,15 @@ ja:
         motivation: "自己啓発"
         comic: "漫画"
         etc: "その他"
-    impression:
-      read_day:
+    recollection:
+      read_term:
         "-----": "-----"
         one_day: "1日"
         two_three_days: "2日〜3日"
         one_week: "1週間"
         two_four_weeks: "2週間〜4週間"
         one_month_over: "1ヶ月以上"
-      interest:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      impressed:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      awareness:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      impact:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      practice:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      knowledge:
-        "-----": "-----"
-        one_point: "１点"
-        two_points: "２点"
-        three_points: "３点"
-        four_points: "４点"
-        five_points: "５点"
-      rating:
+      point:
         "-----": "-----"
         one_point: "１点"
         two_points: "２点"

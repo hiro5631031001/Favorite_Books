@@ -3,7 +3,7 @@
     .recollection-detail__top.form-content
       読書期間
     .recollection-detail__read-day
-      = f.select :read_term, options_for_select(recollection.read_terms.keys.map {|k| [I18n.t("enums.recollection.read_term.#{k}"), k]}, selected: @recollection.read_term), {}, {class: 'select-box'}
+      = f.select :read_term, options_for_select(Recollection.read_terms.keys.map {|k| [I18n.t("enums.recollection.read_term.#{k}"), k]}, selected: @recollection.read_term), {}, {class: 'select-box'}
     -# .error-text
     -#   - @recollection.errors.full_messages_for(:read_term).each do |message|
     -#     %div
@@ -11,7 +11,7 @@
     .recollection-detail__top.form-content
       総評価
     .recollection-detail__rating
-      = f.select :rating, options_for_select(recollection.ratings.keys.map {|k| [I18n.t("enums.recollection.rating.#{k}"), k]}, selected: @recollection.rating), {}, {class: 'select-box'}
+      = f.select :point, options_for_select(Recollection.points.keys.map {|k| [I18n.t("enums.recollection.point.#{k}"), k]}, selected: @recollection.point), {}, {class: 'select-box'}
     -# .error-text
     -#   - @recollection.errors.full_messages_for(:rating).each do |message|
     -#     %div
@@ -19,7 +19,7 @@
     .recollection-detail__top.form-content
       また読みたい時
     .recollection-detail__reread_timing
-      = f.select :reread_timing, options_for_select(recollection.reread_timings.keys.map {|k| [I18n.t("enums.recollection.reread_timing.#{k}"), k]}, selected: @recollection.reread_timing), {}, {class: 'select-box'}
+      = f.select :reread_timing, options_for_select(Recollection.reread_timings.keys.map {|k| [I18n.t("enums.recollection.reread_timing.#{k}"), k]}, selected: @recollection.reread_timing), {}, {class: 'select-box'}
     -# .error-text
     -#   - @recollection.errors.full_messages_for(:reread_timing).each do |message|
     -#     %div
@@ -43,7 +43,7 @@
       .btn-box__book-new
         = f.submit " 感想を登録する ", class: "submit-btn text-line-none"
       .btn-box__back
-        = link_to :back, class: "gray-btn margin-left-40 text-line-none" do
+        = link_to :back, class: "white-btn margin-left-40 text-line-none" do
           もどる
   - else
     .btn-box
