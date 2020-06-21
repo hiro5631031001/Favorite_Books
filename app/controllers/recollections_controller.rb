@@ -1,10 +1,12 @@
 class RecollectionsController < ApplicationController
 
   def new
+    @book = Book.find(params[:book_id])
     @recollection = Recollection.new
   end
 
   def create
+    @book = Book.find(params[:book_id])
     @recollection = Recollection.create(recollection_params)
     if @recollection.save
       @recollection.book.book_read
@@ -17,7 +19,7 @@ class RecollectionsController < ApplicationController
   private
 
   def recollection_params
-    params.require(:impression).permit(:book_id,
+    params.require(:impression).permit(
                                         :read_term,
                                         :readed_day,
                                         :point,
@@ -25,8 +27,6 @@ class RecollectionsController < ApplicationController
                                         :phrase,
                                         :note
                                 ).merge(book_id: params[:book_id])
-    end
-    
   end
 
 
