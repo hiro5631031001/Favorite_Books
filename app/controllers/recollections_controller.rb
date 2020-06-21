@@ -1,0 +1,2 @@
+class RecollectionsController < ApplicationController
+end
