@@ -10,4 +10,13 @@ class Recollection < ApplicationRecord
     one_month_over: 5
   }, _prefix: true
 
+  enum point: {
+    "-----": 0,
+    one_point: 1,
+    two_points: 2,
+    three_points: 3,
+    four_points: 4,
+    five_points: 5
+  }, _prefix: true
+
 end
