@@ -4,4 +4,10 @@ class RecollectionsController < ApplicationController
     @recollection = Recollection.new
   end
 
+  def create
+    @recollection = Recollection.create(recollection_params)
+    
+  end
+
+
 end
