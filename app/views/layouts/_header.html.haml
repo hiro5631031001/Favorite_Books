@@ -22,7 +22,7 @@
       %ul.container__bottom__user-box
         - if user_signed_in?
           %li.container__bottom__list__mypage
-            = link_to "マイページ" 
+            = link_to "マイページ",user_path(current_user.id)
           %li.container__bottom__list__logout
             = link_to "ログアウト",destroy_user_session_path, method: :delete, class: ""
 
