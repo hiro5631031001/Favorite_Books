@@ -2,12 +2,12 @@
   .container
     .container__top
       .container__top__logo
-        = link_to " FAVORITE BOOKS",root_path
-      .search-box
-        = form_with url: new_book_path, method: :get, local: true do |f|
-          .form-group
-            = f.text_field :title, class: "form-control"
-            = f.submit '本の題名を検索', class: "form-control btn btn-success"
+        = link_to " BOOKS RECOLLECTION",root_path
+      -# .search-box
+      -#   = form_with url: new_book_path, method: :get, local: true do |f|
+      -#     .form-group
+      -#       = f.text_field :title, class: "form-control"
+      -#       = f.submit '本の題名を検索', class: "form-control btn btn-success"
 
     .container__bottom
       %ul.container__bottom__list
