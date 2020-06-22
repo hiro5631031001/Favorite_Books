@@ -32,8 +32,14 @@ class Book < ApplicationRecord
     etc: 8
   }, _prefix: true
 
+  enum status: {
+    book_recollection_none: 0,
+    book_recollection_exist: 1,
+    book_following: 2
+  }, _prefix: true
+
   def book_read
-    self.status = "book_impression_exist"
+    self.status = "book_recollection_exist"
     save
   end
 
