@@ -14,8 +14,6 @@
     padding: 16px;
     &__image {
       margin-right: 24px;
-      .img_box {
-      }
     }
     &__info {
       &__title {
@@ -34,12 +32,53 @@
       }
     }
   }
+  .recollection-area {
+    width: 730px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border:  solid 1px #dcdcdc;
+    border-radius: 8px;
+    padding: 36px;
+    &__detail {
+      .readed_day {
+        &__box {
+          
+        }
+
+      }
+      .note {
+        margin-top: 12px;
+        &__box {
+        }
+      }
+      .phrase {
+        margin-top: 12px;
+        &__box {
+        }
+      }
+    }
+    
+
+  }
 }
 
-.d-btn {
+.btn {
   height: 28px;
-  width: 60px;
-  background-color: gray;
+  width: 200px;
+  background-color: $keyColor;
+  text-align: center;
+  line-height: 28px;
+  margin-top: 8px;
+  a {
+    text-decoration: none;
+    color: lavender;
+  }
+}
+
+.btn {
+  height: 28px;
+  width: 200px;
+  background-color: $keyColor;
   text-align: center;
   line-height: 28px;
   margin-top: 8px;

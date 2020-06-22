@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
+  has_many :recollections, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
@@ -30,5 +31,10 @@ class Book < ApplicationRecord
     comic: 7,
     etc: 8
   }, _prefix: true
+
+  def book_read
+    self.status = "book_impression_exist"
+    save
+  end
 
 end

@@ -17,7 +17,30 @@
       .main_area__info__rate
         レビュー点数入力予定
       - if user_signed_in? && current_user.id == @book.user_id
-        .d-btn
+        .btn
           = link_to "編集", edit_book_path(@book)
-        .d-btn
+        .btn
           = link_to "削除", book_path(@book), method: :delete
+        .btn
+          = link_to "感想を入力する", new_book_recollection_path(@book)
+  
+  -if @recollections.present?
+    .recollection-area
+      - @recollections.each do |r|
+        .recollection-area__detail
+          .readed_day
+            読み終えた日
+            .readed-day__box
+            = r.readed_day
+          .note.top-line
+            感想 
+            .note__box
+              = r.note
+          .phrase.top-line
+            好きな文章
+            .phrase__box
+              = r.phrase
+
+          
+  
+  
