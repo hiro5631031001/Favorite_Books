@@ -1,5 +1,5 @@
 .header {
-  height: 84px;
+  height: 92px;
   background-color: $keyColor;
 
   a {
@@ -24,6 +24,7 @@
       &__search {
         // width: 80%;
         margin-right: 28px;
+
         &__box{
           height: 28px;
           width: 100%;
@@ -37,6 +38,7 @@
         }
       }
       .search-box {
+        color: white;
         &__text {
 
         }
@@ -54,8 +56,7 @@
       width: 100%;
       display: flex;
       justify-content: space-evenly;
-      margin-bottom: 12px;
-      padding-top: 16px;
+      padding-top: 8px;
       
       &__list {
         display: flex;
