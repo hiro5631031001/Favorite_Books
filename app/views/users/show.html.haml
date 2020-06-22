@@ -1,2 +1,23 @@
 %h1 Users#show
 %p Find me in app/views/users/show.html.haml
+
+.wrap
+  .side-bar
+    .side-bar__main
+      %ul.user-menu
+        MYPAGE MENU
+        %li.user-menu__list
+          = link_to "トップ","#", class: "text-decoration-none text-color-black"
+        %li.user-menu__list
+          = link_to "読書記録","#", class: "text-decoration-none text-color-black"
+        %li.user-menu__list
+          = link_to "登録本一覧","#", class: "text-decoration-none text-color-black"
+        %li.user-menu__list
+          = link_to "カテゴリー", "#", class: "text-decoration-none text-color-black"
+        %li.user-menu__list
+
+  .user-info
+    .user-info-main
+
+
+
