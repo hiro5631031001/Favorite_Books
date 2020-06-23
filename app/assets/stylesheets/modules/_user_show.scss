@@ -5,8 +5,8 @@
     height: 100vh;
     &__main {
       .user-menu{
+        margin-top: 40px;
         width: 80%;
-        margin: 0 auto;
         font-weight: bold;
         &__list {
           margin-top: 20px;
@@ -18,10 +18,44 @@
   .user-info {
     width: 85%;
     height: 100vh;
-    background-color: burlywood;
-    &__main {
-
+    &__top {
+      width: 90%;
+      .user-title {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      .user-details {
+        .left {
+          margin-top: 40px;
+        }
+        .right {
+        }
+      }
+      .title {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 24px;
+      }
+      .user-books-lists{
+        display: flex;
+        flex-wrap: wrap;
+        &__book {
+          margin-right: 20px;
+          margin-top: 20px;
+          margin-bottom: 40px;
+          .book-image-box {
+            img {
+              width: 100px;
+              height: 150px;
+            }
+          }
+        }
+      }
     }
   }
 }
+
 
