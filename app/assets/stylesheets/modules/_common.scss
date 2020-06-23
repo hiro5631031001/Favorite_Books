@@ -58,6 +58,20 @@
   font-size: 14px;
 }
 
+.mypage-link-btn{
+  @include btn-set(120px, 32px);
+  color: #fff;
+  background-color: $keyColor;
+  font-size: 14px;
+}
+
+.mypage-link-btn2{
+  @include btn-set(80px, 20px);
+  color: #fff;
+  background-color: $keyColor;
+  font-size: 12px;
+}
+
 /* リンク・アンダーラインなし */
 .text-decoration-none{
   text-decoration: none;
@@ -66,6 +80,11 @@
 // 文字カラー黒
 .text-color-black {
   color: black;
+}
+
+// 文字カラー白
+.text-color-white {
+  color:white;
 }
 
 
@@ -82,4 +101,8 @@
 // トップライン
 .top-line {
   border-top: 1px solid #dcdcdc;
+}
+
+.bottom-line {
+  border-bottom: 1px solid #dcdcdc;
 }
