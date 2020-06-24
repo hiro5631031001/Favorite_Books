@@ -28,28 +28,38 @@
         border:  solid 1px #dcdcdc;
         border-radius: 8px;
         padding: 32px;
+        position: relative;
         &__image {
-          margin-right: 8px;
+          filter: drop-shadow(4px 4px 4px rgba(0,0,0,1));
+          margin-right: 32px;
         }
         &__in {
           width: 480px;
           height: 200px;
           &__title {
-            font-size: 16px;
+            font-size: 14px;
+            margin-bottom: 8px;
           }
           &__author {
             font-size: 12px;
           }
           &__publisher {
-            margin-top: 12px;
-            font-size: 16px;
+            font-size: 12px;
+            margin-bottom: 12px;
           }
           &__user-name{
+            position: absolute;
+            right: 80px;
+            bottom: 20px;
+            
 
           }
           &__user-image{
             text-align: right;
             margin-right: 40px;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
           }
         }
       }
