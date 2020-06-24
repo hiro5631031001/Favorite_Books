@@ -19,8 +19,9 @@
       .user-details
         .left
           .left-inner
-            .user-image
-              = image_tag @user.image.url, alt: '', height: '68', width: '68', class: 'user-image__body'
+            - if @user.image.url.present?
+              .user-image
+                = image_tag @user.image.url, alt: '', height: '68', width: '68', class: 'user-image__body'
             .user-name
               = @user.nickname
             .user-edit-link.link-btn
@@ -29,23 +30,25 @@
           .user-books-info
             ユーザーの持っている書籍情報
 
-      %h2.title
-        最近購入した書籍
-      .user-books-lists.top-line
-        - @buy_books.each do |book|
-          .user-books-lists__book
-            .book-image-box
-              = link_to "#" do
-                = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
+      - if @buy_books.present?
+        %h2.title
+          最近購入した書籍
+        .user-books-lists.top-line
+          - @buy_books.each do |book|
+            .user-books-lists__book
+              .book-image-box
+                = link_to "#" do
+                  = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
       
-      %h2.title
-        最近読み終わった本
-      .user-books-lists.top-line
-        - @readed_books.each do |book|
-          .user-books-lists__book
-            .book-image-box
-              = link_to "#" do
-                = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
+      -if @readed_books.present?
+        %h2.title
+          最近読み終わった本
+        .user-books-lists.top-line
+          - @readed_books.each do |book|
+            .user-books-lists__book
+              .book-image-box
+                = link_to "#" do
+                  = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
 
 
 
