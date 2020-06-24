@@ -5,25 +5,26 @@
   .main_area
     .main_area__image
       .img_box
-        = image_tag @book.image.url, alt: '書籍画像', height: '250', width: '169', class: ''
+        = image_tag @book.image.url, alt: '書籍画像', height: '180', width: '120', class: ''
       .add-btn
     .main_area__info
       %h1.main_area__info__title
         = @book.title
       .main_area__info__author
         = "著者：#{@book.author}"
-      .main_area__info__publisher_name
+      .main_area__info__publisher
         = "出版社：#{@book.publisher}"
       - if user_signed_in? && current_user.id == @book.user_id
-        = link_to edit_book_path(@book) do
-          .btn.link-btn
-            編集
-        = link_to book_path(@book), method: :delete do
-          .btn.link-btn
-            削除
-        = link_to new_book_recollection_path(@book) do
-          .btn.link-btn
-            感想を入力する
+        .btn-area
+          = link_to edit_book_path(@book) do
+            .btn.link-btn
+              編集
+          = link_to book_path(@book), method: :delete do
+            .btn.link-btn
+              削除
+          = link_to new_book_recollection_path(@book) do
+            .btn2.link-btn
+              感想を入力する
   
   -if @recollections.present?
     .recollection-area
