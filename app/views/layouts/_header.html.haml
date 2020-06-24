@@ -16,8 +16,8 @@
         - if user_signed_in?
           %li.container__bottom__list__post
             = link_to "書籍登録",new_book_path
-          %li.container__bottom__list__want
-            = link_to "読みたい本"
+          -# %li.container__bottom__list__want
+          -#   = link_to "読みたい本"
 
       %ul.container__bottom__user-box
         - if user_signed_in?
