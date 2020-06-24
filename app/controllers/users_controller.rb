@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :bookcase]
   
   
   def show
@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def bookcase
+    @bookcase = @user.books.all.order("created_at DESC")
   end
 
   private
