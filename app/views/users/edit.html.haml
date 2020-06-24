@@ -1,0 +1,25 @@
+.box
+  .box-header
+    %h2 ユーザー情報編集
+  
+  .box-form
+    = form_with(model: @user, local: true) do |f|
+      .field.form-content
+        = f.label :nickname
+        %br/
+        = f.text_field :nickname, autofocus: true,  placeholder: "例）ニックネーム", class:"text-input"
+      .field.form-content
+        avator
+        %br/
+        = f.file_field :image
+      .field.form-content
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"text-input"
+      .field.form-content
+        = f.label :birth_day
+        %br/
+      .birthday-box
+        = f.date_select :birth_day, prompt: "---", start_year:2020, end_year:1920, class: "select-box"
+      .actions
+        = f.submit "変更する", class: "submit-btn"
