@@ -59,6 +59,7 @@
           margin-top: 20px;
           margin-bottom: 40px;
           .book-image-box {
+            filter: drop-shadow(4px 4px 4px rgba(0,0,0,1));
             img {
               width: 100px;
               height: 150px;
