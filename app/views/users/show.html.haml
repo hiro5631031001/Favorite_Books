@@ -1,54 +1,7 @@
 .wrap
-  .side-bar
-    .side-bar__main
-      %ul.user-menu.block-center
-        MYPAGE MENU
-        %li.user-menu__list.mypage-link-btn
-          = link_to "トップ" , user_path(current_user.id), class: "text-decoration-none text-color-white"
-        %li.user-menu__list.mypage-link-btn
-          = link_to "読書記録","#", class: "text-decoration-none text-color-white"
-        %li.user-menu__list.mypage-link-btn
-          = link_to "登録本一覧","#", class: "text-decoration-none text-color-white"
-        %li.user-menu__list.mypage-link-btn
-          = link_to "カテゴリー", "#", class: "text-decoration-none text-color-white"
+  = render "shared/user_menu"
+  = render "shared/user_info"
 
-  .user-info
-    .user-info__top.block-center
-      .user-title.bottom-line
-        = "#{@user.nickname}さんの本棚"
-      .user-details
-        .left
-          .left-inner
-            - if @user.image.url.present?
-              .user-image
-                = image_tag @user.image.url, alt: '', height: '68', width: '68', class: 'user-image__body'
-            .user-name
-              = @user.nickname
-            .user-edit-link.link-btn
-              = link_to "編集",edit_user_path(@user), class: "text-decoration-none text-color-white"
-        .right
-          .user-books-info
-            ユーザーの持っている書籍情報
-
-      - if @buy_books.present?
-        %h2.title
-          最近購入した書籍
-        .user-books-lists.top-line
-          - @buy_books.each do |book|
-            .user-books-lists__book
-              .book-image-box
-                = link_to "#" do
-                  = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
-      
-      -if @readed_books.present?
-        %h2.title
-          最近読み終わった本
-        .user-books-lists.top-line
-          - @readed_books.each do |book|
-            .user-books-lists__book
-              .book-image-box
-                = link_to "#" do
-                  = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
 
 
 
