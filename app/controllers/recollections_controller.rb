@@ -1,12 +1,16 @@
 class RecollectionsController < ApplicationController
+  before_action :set_book
+
+  def index
+    @recollections = Recollection.where(book_id: @book.id).order("created_at")
+  end
+
 
   def new
-    @book = Book.find(params[:book_id])
     @recollection = Recollection.new
   end
 
   def create
-    @book = Book.find(params[:book_id])
     @recollection = Recollection.create(recollection_params)
     if @recollection.save
       @recollection.book.book_read
@@ -27,6 +31,10 @@ class RecollectionsController < ApplicationController
                                         :phrase,
                                         :note
                                 ).merge(book_id: params[:book_id])
+  end
+
+  def set_book
+    @book = Book.find(params[:book_id])
   end
 
 
