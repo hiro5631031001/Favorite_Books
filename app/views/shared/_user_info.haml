@@ -24,7 +24,7 @@
         - @buy_books.each do |book|
           .user-books-lists__book
             .book-image-box
-              = link_to "#" do
+              = link_to book_path(book) do
                 = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
     
     -if @readed_books.present?
@@ -34,5 +34,5 @@
         - @readed_books.each do |book|
           .user-books-lists__book
             .book-image-box
-              = link_to "#" do
+              = link_to book_path(book) do
                 = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
