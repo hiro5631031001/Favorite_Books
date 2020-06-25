@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :bookcase]
+  before_action :set_user_recollection, only: [:show]
   
   
   def show
@@ -30,5 +31,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_user_recollection
+    @recollections = Recollection.where(book_id: @user.books.ids)
   end
 end
