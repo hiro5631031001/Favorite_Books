@@ -1,0 +1,74 @@
+.wrap {
+  display: flex;
+  .side-bar {
+    width: 15%;
+    height: 100vh;
+    &__main {
+      .user-menu{
+        margin-top: 40px;
+        width: 80%;
+        font-weight: bold;
+        &__list {
+          margin-top: 20px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .user-info {
+    width: 85%;
+    height: 100vh;
+    &__top {
+      width: 90%;
+      .user-title {
+        padding: 40px 0 ;
+        text-align: center;
+        font-size: 24px;
+      }
+      .user-details {
+        display: flex;
+        .left {
+          .left-inner {
+            padding: 40px 80px;
+            .user-image {
+              padding: 20px;
+            }
+            .user-name {
+              margin: 20px;
+            }
+            .user-edit-link {
+              margin: 20px;
+            }
+          }
+        }
+        .right {
+          padding: 40px 80px;
+        }
+      }
+      .title {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 24px;
+      }
+      .user-books-lists{
+        display: flex;
+        flex-wrap: wrap;
+        &__book {
+          margin-right: 20px;
+          margin-top: 20px;
+          margin-bottom: 40px;
+          .book-image-box {
+            filter: drop-shadow(4px 4px 4px rgba(0,0,0,1));
+            img {
+              width: 100px;
+              height: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,10 @@
+.bookcase-wrap
+  .bookcase-top.block-center
+    .bookcase-header
+      .bookcase-title.block-center
+        = "#{@user.nickname}さんの本棚"
+    .bookcase-lists
+      - @bookcase.each do |book|
+        .book
+          = link_to "#" do
+            = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''

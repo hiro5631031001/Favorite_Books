@@ -1,3 +1,13 @@
+/* ブロックレベル要素中央 */
+.block-center{
+  margin: 0 auto;
+}
+
+// aタグにはデフォルトで下線なしとする
+a {
+  text-decoration: none;
+}
+
 // フォームのコンテンツタイトル
 
 .form-content {
@@ -53,9 +63,35 @@
   font-size: 14px;
 }
 
-/* アンダーラインなし */
-.text-line-none{
+// マイページメニューのリンクボタン
+.mypage-link-btn{
+  @include btn-set(120px, 32px);
+  color: #fff;
+  background-color: $keyColor;
+  font-size: 14px;
+}
+
+// 小さいリンクボタン（user#edit）で使用
+.link-btn{
+  @include btn-set(80px, 20px);
+  color: #fff;
+  background-color: $keyColor;
+  font-size: 12px;
+}
+
+/* リンク・アンダーラインなし */
+.text-decoration-none{
   text-decoration: none;
+}
+
+// 文字カラー黒
+.text-color-black {
+  color: black;
+}
+
+// 文字カラー白
+.text-color-white {
+  color:white;
 }
 
 /* 白色ボタン */
@@ -70,4 +106,9 @@
 // トップライン
 .top-line {
   border-top: 1px solid #dcdcdc;
+}
+
+// ボトムライン
+.bottom-line {
+  border-bottom: 1px solid #dcdcdc;
 }

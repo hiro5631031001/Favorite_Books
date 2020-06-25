@@ -1,27 +1,35 @@
+a {
+  text-decoration: none;
+}
+
 .pageTitle {
   text-align: center;
   font-size: 40px;
   padding: 28px;
 }
 
-.wrap {
+.wrap-bookshow {
   .main_area {
     width: 730px;
     margin: 0 auto;
     display: flex;
     border:  solid 1px #dcdcdc;
     border-radius: 8px;
-    padding: 16px;
+    padding: 32px;
     &__image {
-      margin-right: 24px;
+      filter: drop-shadow(4px 4px 4px rgba(0,0,0,1));
+      margin-right: 40px;
     }
     &__info {
       &__title {
-        font-size: 34px;
+        font-size: 18px;
+        margin-bottom: 12px;
       }
-      &_author{
+      &__author{
+        font-size: 14px;
       }
       &__publisher {
+        font-size: 14px;
 
       }
       &__rate {
@@ -29,6 +37,10 @@
         height: 32px;
         width: 200px;
         background-color: chocolate;
+      }
+      .btn-area {
+        display: flex;
+        margin-top: 60px;
       }
     }
   }
@@ -40,6 +52,10 @@
     border-radius: 8px;
     padding: 36px;
     &__detail {
+      border:  solid 1px #dcdcdc;
+      border-radius: 8px;
+      margin-bottom: 32px;
+      padding: 24px;
       .readed_day {
         &__box {
           
@@ -63,27 +79,24 @@
 }
 
 .btn {
-  height: 28px;
-  width: 200px;
+  height: 24px;
+  width: 50px;
   background-color: $keyColor;
   text-align: center;
-  line-height: 28px;
-  margin-top: 8px;
+  line-height: 24px;
+  margin-right: 12px;
   a {
-    text-decoration: none;
     color: lavender;
   }
 }
 
-.btn {
-  height: 28px;
-  width: 200px;
+.btn2 {
+  height: 24px;
+  width: 160px;
   background-color: $keyColor;
   text-align: center;
-  line-height: 28px;
-  margin-top: 8px;
+  line-height: 24px;
   a {
-    text-decoration: none;
     color: lavender;
   }
 }
