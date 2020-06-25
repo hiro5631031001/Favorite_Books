@@ -27,21 +27,27 @@
               感想を入力する
   
   -if @recollections.present?
+    .recollection-title
+      .recollection-title__box.block-center
+        = @book.user.nickname + "さんの感想一覧"
     .recollection-area
       - @recollections.each do |r|
         .recollection-area__detail
-          .readed_day
-            読み終えた日
-            .readed-day__box
+          .readed-day
             = r.readed_day
-          .note.top-line
-            感想 
+          .note
             .note__box
-              = r.note
-          .phrase.top-line
-            好きな文章
-            .phrase__box
-              = r.phrase
+              = truncate(r.note, length: 20)
+          = link_to book_recollection_path(@book, r) do
+            .btn3.link-btn
+              感想詳細ページへ
+  - else
+    .recollection-title
+      .recollection-title__box.block-center
+        = @book.user.nickname + "さんの感想は入力されていません"
+
+    
+          
 
           
   

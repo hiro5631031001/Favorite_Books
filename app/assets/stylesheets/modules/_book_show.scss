@@ -44,34 +44,52 @@ a {
       }
     }
   }
+
+  .recollection-title {
+    &__box {
+      width:80%;
+      margin-top: 30px;
+      font-size: 26px;
+      text-align: center;
+    }
+  }
+
+
   .recollection-area {
     width: 730px;
     margin: 0 auto;
     margin-top: 40px;
-    border:  solid 1px #dcdcdc;
-    border-radius: 8px;
-    padding: 36px;
+    padding: 0 60px;
     &__detail {
       border:  solid 1px #dcdcdc;
-      border-radius: 8px;
+      border-radius: 40px;
       margin-bottom: 32px;
-      padding: 24px;
-      .readed_day {
-        &__box {
-          
-        }
-
+      padding: 20px;
+      .readed-day {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
       }
       .note {
         margin-top: 12px;
+        text-align: center;
         &__box {
         }
       }
-      .phrase {
+      .btn3 {
+        height: 24px;
+        width: 160px;
+        background-color: $keyColor;
+        text-align: center;
+        line-height: 24px;
+        margin: 0 auto;
         margin-top: 12px;
-        &__box {
+        a {
+          color: lavender;
         }
       }
+      
+
     }
     
 
