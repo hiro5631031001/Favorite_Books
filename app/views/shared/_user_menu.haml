@@ -7,6 +7,6 @@
       %li.user-menu__list.mypage-link-btn
         = link_to "読書記録","#", class: "text-decoration-none text-color-white"
       %li.user-menu__list.mypage-link-btn
-        = link_to "登録本一覧", bookcase_user_path , class: "text-decoration-none text-color-white"
+        = link_to "登録本一覧", bookcase_user_path(@user) , class: "text-decoration-none text-color-white"
       %li.user-menu__list.mypage-link-btn
-        = link_to "カテゴリー", "#", class: "text-decoration-none text-color-white"
+        = link_to "カテゴリー", category_user_path(@user), class: "text-decoration-none text-color-white"
