@@ -212,10 +212,10 @@ ja:
         novel: "小説"
         management: "ビジネス"
         economy: "政治・経済"
-        finance: "金融・ファイナンス"
-        history: "歴史"
+        philosophy: "哲学・宗教"
+        psychology: "心理学"
         motivation: "自己啓発"
-        comic: "漫画"
+        comic: "マンガ"
         etc: "その他"
     recollection:
       read_term:
