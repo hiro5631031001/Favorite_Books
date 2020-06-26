@@ -1,0 +1,64 @@
+.recollection-wrap
+  .recollection-show
+    .recollection-show__top
+      .recollection-show__top__title
+        %h2
+          感想詳細ページ
+        = link_to edit_book_recollection_path(@book,@recollection) do
+          .btn2.link-btn
+            感想を編集する
+        .book-title
+          .book-title__top.background-blue.text-color-white.padding-10
+            タイトル
+          .book-title__bottom
+            = @book.title
+      .recollection-show__top__note
+        .note-title
+          .note-title__top.background-blue.text-color-white.padding-10
+            読んだ日
+          .note-title__date
+            = @recollection.created_at.strftime("%Y年%-m月%-d日")
+        .note-title
+          .note-title__top.background-blue.text-color-white.padding-10
+            読んだ期間
+          .note-title__date
+            = @recollection.read_term_i18n
+        .note-title
+          .note-title__top.background-blue.text-color-white.padding-10
+            また読みたい時
+          .note-title__reread-timing
+            = @recollection.reread_timing_i18n
+        .note-title
+          .note-title__top.background-blue.text-color-white.padding-10
+            評価
+          .note-title__reread-timing
+            = @recollection.point_i18n
+      -# .recollection-show__top__point
+      -#   .point-box
+      -#     = @recollection.point_i18n
+        
+    .recollection-show__main
+      .recollection-show__main__box
+        .note-top.background-blue.text-color-white.padding-10
+          感想メモ
+        - if @recollection.note.present?
+          .note-box
+            = @recollection.note
+        - else
+          .note-box-none
+            感想メモを書いてみよう
+        
+        .note-top.background-blue.text-color-white.padding-10
+          引用箇所
+        - if @recollection.phrase.present?
+          .note-box
+            = @recollection.phrase
+        - else
+          .note-box-none
+            心に残った文章を引用しておこう
+        
+
+
+
+
+ 
