@@ -1,5 +1,6 @@
 class RecollectionsController < ApplicationController
   before_action :set_book
+  before_action :set_recollection, only: [:show, :edit, :update, :destroy]
 
   def index
     @recollections = Recollection.where(book_id: @book.id).order("created_at")
@@ -20,6 +21,22 @@ class RecollectionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @recollection.update(recollection_params)
+      redirect_to book_recollection_path(@book, @recollection)
+    else
+      render 'edit'
+    end
+  end
+
+
+  def show
+    @recollections = Recollection.where(book_id: @book.id).order("created_at")
+  end
+
   private
 
   def recollection_params
@@ -37,5 +54,8 @@ class RecollectionsController < ApplicationController
     @book = Book.find(params[:book_id])
   end
 
+  def set_recollection
+    @recollection = Recollection.find(params[:id])
+  end
 
 end
