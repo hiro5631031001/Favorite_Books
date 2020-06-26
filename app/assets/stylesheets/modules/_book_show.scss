@@ -8,6 +8,12 @@ a {
   padding: 28px;
 }
 
+.readed-day {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .wrap-bookshow {
   .main_area {
     width: 730px;
@@ -44,34 +50,76 @@ a {
       }
     }
   }
+
+  .recollection-title {
+    &__box {
+      width:80%;
+      margin-top: 30px;
+      font-size: 26px;
+      text-align: center;
+    }
+  }
+
+
   .recollection-area {
-    width: 730px;
+    width: 1040px;
     margin: 0 auto;
     margin-top: 40px;
-    border:  solid 1px #dcdcdc;
-    border-radius: 8px;
-    padding: 36px;
+    padding: 0 60px;
     &__detail {
       border:  solid 1px #dcdcdc;
-      border-radius: 8px;
+      border-radius: 40px;
       margin-bottom: 32px;
-      padding: 24px;
-      .readed_day {
-        &__box {
-          
+      padding: 20px;
+      .top-box {
+        display: flex;
+        justify-content: center;
+        padding: 10px 80px;
+        .readed-day {
+          text-align: center;
+          font-size: 18px;
+          font-weight: bold;
         }
-
+        .note-title {
+          text-align: center;
+          margin-right: 20px;
+          &__top {
+            margin: 0 auto;
+            margin-top:8px;
+            margin-bottom: 8px;
+          }
+        }
       }
       .note {
         margin-top: 12px;
+        text-align: center;
+        .note-title {
+          margin: 0 auto;
+          margin-bottom: 12px;
+        }
         &__box {
+          width: 80%;
+          padding: 20px;
+          border: 1px solid gray;
+          border-radius: 12px;
+          margin: 0 auto;
+          margin-bottom: 40px;
         }
       }
-      .phrase {
+      .btn3 {
+        height: 24px;
+        width: 160px;
+        background-color: $keyColor;
+        text-align: center;
+        line-height: 24px;
+        margin: 0 auto;
         margin-top: 12px;
-        &__box {
+        a {
+          color: lavender;
         }
       }
+      
+
     }
     
 

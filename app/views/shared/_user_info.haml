@@ -15,7 +15,11 @@
               編集
       .right
         .user-books-info
-          ユーザーの持っている書籍情報
+          .user-books-info__box
+            .books_count
+              = "書籍登録数：" + @user.books.count.to_s + "冊"
+            .books_category-box
+
 
     - if @buy_books.present?
       %h2.title
@@ -24,7 +28,7 @@
         - @buy_books.each do |book|
           .user-books-lists__book
             .book-image-box
-              = link_to "#" do
+              = link_to book_path(book) do
                 = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'
     
     -if @readed_books.present?
@@ -34,5 +38,5 @@
         - @readed_books.each do |book|
           .user-books-lists__book
             .book-image-box
-              = link_to "#" do
+              = link_to book_path(book) do
                 = image_tag book.image.url alt: '', height: '150', width: '100', class: 'book__image'

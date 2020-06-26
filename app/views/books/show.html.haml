@@ -9,7 +9,7 @@
       .add-btn
     .main_area__info
       %h1.main_area__info__title
-        = @book.title
+        = "タイトル" + @book.title
       .main_area__info__author
         = "著者：#{@book.author}"
       .main_area__info__publisher
@@ -27,21 +27,74 @@
               感想を入力する
   
   -if @recollections.present?
+    .recollection-title
+      .recollection-title__box.block-center
+        = @book.user.nickname + "さんの感想"
+      
+    .recollection-area
+      .recollection-area__detail
+        .top-box
+          .note-title
+            .note-title__top.background-blue.text-color-white.padding-10.size30-120
+              読んだ日
+            .note-title__date
+              = @recollections.last.readed_day.strftime("%Y年%-m月%-d日")
+          .note-title
+            .note-title__top.background-blue.text-color-white.padding-10.size30-120
+              読んだ期間
+            .note-title__date
+              = @recollections.last.read_term_i18n
+          -# .note-title
+          -#   .note-title__top.background-blue.text-color-white.padding-10.size30-120
+          -#     また読みたい時
+          -#   .note-title__reread-timing
+          -#     = @recollections.last.reread_timing_i18n
+          .note-title
+            .note-title__top.background-blue.text-color-white.padding-10.size30-120
+              評価
+            .note-title__reread-timing
+              = @recollections.last.point_i18n
+        
+        .note
+          -if @recollections.last.note.present?
+            .note-title.background-blue.text-color-white.padding-10.size30-120
+              感想
+            .note__box
+              = @recollections.last.note
+
+          -if @recollections.last.phrase.present?
+  
+            .note-title.background-blue.text-color-white.padding-10.size30-120
+              引用箇所
+            .note__box
+              = @recollections.last.phrase
+        = link_to book_recollection_path(@book, @recollections.last) do
+          .btn3.link-btn
+            感想詳細ページへ
+  
+  -if @recollections.present?
+    .recollection-title
+      .recollection-title__box.block-center
+        = @book.user.nickname + "さんの感想一覧"
+      
     .recollection-area
       - @recollections.each do |r|
         .recollection-area__detail
-          .readed_day
-            読み終えた日
-            .readed-day__box
+          .readed-day
             = r.readed_day
-          .note.top-line
-            感想 
+          .note
             .note__box
-              = r.note
-          .phrase.top-line
-            好きな文章
-            .phrase__box
-              = r.phrase
+              = truncate(r.note, length: 20)
+          = link_to book_recollection_path(@book, r) do
+            .btn3.link-btn
+              感想詳細ページへ
+  - else
+    .recollection-title
+      .recollection-title__box.block-center
+        = @book.user.nickname + "さんの感想は入力されていません"
+
+    
+          
 
           
   

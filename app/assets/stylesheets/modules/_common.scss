@@ -94,6 +94,10 @@ a {
   color:white;
 }
 
+.padding-10 {
+  padding: 6px 10px ;
+}
+
 /* 白色ボタン */
 .white-btn{
   @include btn-set(100px, 44px);
@@ -103,6 +107,17 @@ a {
   font-size: 14px;
 }
 
+.background-keyColer {
+  background-color: $keyColor;
+  border-radius: 8px;
+}
+
+.background-blue {
+  background-color: rgba(0, 17, 255, 0.637);
+  border-radius: 8px;
+}
+
+
 // トップライン
 .top-line {
   border-top: 1px solid #dcdcdc;
@@ -111,4 +126,9 @@ a {
 // ボトムライン
 .bottom-line {
   border-bottom: 1px solid #dcdcdc;
+}
+
+.size30-120 {
+  height: 30px;
+  width: 120px;
 }
