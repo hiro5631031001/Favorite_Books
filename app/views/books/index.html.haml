@@ -20,7 +20,8 @@
                   = "投稿者: #{book.user.nickname}"
                 .content__in__user-image
                   - if book.user.image?
-                    = image_tag book.user.image.url, alt: '', height: '68', width: '68', class: ''
+                    = link_to bookcase_user_path(book.user.id) do
+                      = image_tag book.user.image.url, alt: '', height: '68', width: '68', class: 'user-icon'
 
     -# .contents__categories
     -#   .category
