@@ -30,6 +30,7 @@
     .recollection-title
       .recollection-title__box.block-center
         = @book.user.nickname + "さんの感想一覧"
+      
     .recollection-area
       - @recollections.each do |r|
         .recollection-area__detail
