@@ -1,0 +1,89 @@
+.bookcase-wrap
+  .bookcase-top.block-center
+    .bookcase-header
+      .bookcase-title.block-center
+        = "#{@user.nickname}さんの本棚"
+
+    .bookcase-lists
+
+    - if @novels.present?
+      .category-name
+        小説
+        - @novels.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+        
+
+    - if @managements.present?
+      .category-name
+        ビジネス
+        - @managements.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+
+    - if @economies.present?
+      .category-name
+        ビジネス
+        - @economies.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+
+
+    - if @philosophies.present?
+      .category-name
+        哲学・宗教
+        - @philosophies.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+    
+    - if @psychologies.present?
+      .category-name
+        心理学
+        - @psychologies.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+    
+    - if @motivations.present?
+      .category-name
+        自己啓発
+        - @motivations.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+    
+    - if @comics.present?
+      .category-name
+        マンガ
+        - @comics.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
+    
+    - if @etcs.present?
+      .category-name
+        その他
+        - @etcs.each do |book|
+          .book
+            - if book.status == "book_recollection_exist"
+              .read-badge.opacity
+            = link_to book_path(book) do
+              = image_tag book.image.url , alt: '', height: '120', width: '80', class: ''
