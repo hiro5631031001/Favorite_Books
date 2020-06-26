@@ -15,7 +15,11 @@
               編集
       .right
         .user-books-info
-          ユーザーの持っている書籍情報
+          .user-books-info__box
+            .books_count
+              = "書籍登録数：" + @user.books.count.to_s + "冊"
+            .books_category
+
 
     - if @buy_books.present?
       %h2.title
