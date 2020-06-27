@@ -1,0 +1,26 @@
+.read_log-wrap {
+
+  .read_log-main {
+    margin-top: 80px;
+    margin-left: 80px;
+    .log_box {
+      margin-bottom: 40px;
+      .dates-box {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-decoration-style: wavy;
+      }
+      .date {
+        margin-left: 20px;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+span {
+  border: 1px solid gray;
+  padding: 8px 12px;
+  border-radius: 8px;
+}

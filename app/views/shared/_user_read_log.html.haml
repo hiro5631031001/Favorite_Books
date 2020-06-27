@@ -1,0 +1,22 @@
+.read_log-wrap
+  .read_log-main
+
+    .log_box
+      .dates-box
+        %span
+          = @user.nickname + "さんの書籍購入記録"
+      - @book_buy_logs.each do |log|
+        .date
+          = log.buy_date
+          = "「" + log.title + "」" + "を購入しました"
+    
+    .log_box
+      .dates-box
+        %span
+          = @user.nickname + "さんの感想入力記録"
+      - @recollections.each do |recollection|
+        .date
+          = recollection.readed_day
+          = "「" + recollection.book.title + "」" + "の感想を入力しました"
+
+
