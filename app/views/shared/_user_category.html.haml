@@ -8,7 +8,8 @@
 
     - if @novels.present?
       .category-name
-        小説
+        %span.categoryTitle.novel-color
+          小説
         - @novels.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -19,7 +20,8 @@
 
     - if @managements.present?
       .category-name
-        ビジネス
+        %span.categoryTitle.management-color
+          ビジネス
         - @managements.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -29,7 +31,8 @@
 
     - if @economies.present?
       .category-name
-        ビジネス
+        %span.categoryTitle.economy-color
+          政治・経済
         - @economies.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -40,7 +43,8 @@
 
     - if @philosophies.present?
       .category-name
-        哲学・宗教
+        %span.categoryTitle.philosophy-color
+          哲学・宗教
         - @philosophies.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -50,7 +54,8 @@
     
     - if @psychologies.present?
       .category-name
-        心理学
+        %span.categoryTitle.psychology-color
+          心理学
         - @psychologies.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -60,7 +65,8 @@
     
     - if @motivations.present?
       .category-name
-        自己啓発
+        %span.categoryTitle.motivation-color
+          自己啓発
         - @motivations.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -70,7 +76,8 @@
     
     - if @comics.present?
       .category-name
-        マンガ
+        %span.categoryTitle.comic-color
+          マンガ
         - @comics.each do |book|
           .book
             - if book.status == "book_recollection_exist"
@@ -80,7 +87,8 @@
     
     - if @etcs.present?
       .category-name
-        その他
+        %span.categoryTitle.etc-color
+          その他
         - @etcs.each do |book|
           .book
             - if book.status == "book_recollection_exist"
