@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get 'bookcase'
       get 'category'
+      get 'read_log'
     end
   end
   resources :books do
