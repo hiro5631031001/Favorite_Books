@@ -3,8 +3,9 @@ class UsersController < ApplicationController
                                   :edit, 
                                   :update, 
                                   :bookcase, 
-                                  :category]
-  before_action :set_user_recollection, only: [:show]
+                                  :category,
+                                  :read_log]
+  before_action :set_user_recollection, only: [:show,:read_log]
   
   
   def show
@@ -36,6 +37,10 @@ class UsersController < ApplicationController
 
   def bookcase
     @bookcase = @user.books.all.order("created_at DESC")
+  end
+
+  def read_log
+    @book_buy_logs = @user.books.all.order("buy_date ASC")
   end
 
   private
