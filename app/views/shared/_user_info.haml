@@ -10,9 +10,10 @@
               = image_tag @user.image.url, alt: '', height: '68', width: '68', class: 'user-image__body'
           .user-name
             = @user.nickname
-          = link_to edit_user_path(@user) do
-            .user-edit-link.link-btn.text-decoration-none.text-color-white
-              編集
+          - if current_user.id == @user.id
+            = link_to edit_user_path(@user) do
+              .user-edit-link.link-btn.text-decoration-none.text-color-white
+                編集
       .right
         .user-books-info
           .user-books-info__box

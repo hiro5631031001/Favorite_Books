@@ -132,3 +132,35 @@ a {
   height: 30px;
   width: 120px;
 }
+
+// 読書済みバッジ
+
+.read-badge {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.read-badge:before {
+  content: "";
+  top: 0;
+  left: 0;
+  border-bottom:  3em solid transparent;
+  border-left: 3em solid rgb(255, 0, 81);
+  position: absolute;
+  z-index: 100;
+}
+.read-badge:after {
+  content: "読了";
+  display: block;
+  top: 8px;
+  transform: rotate( -45deg);
+  color: white;
+  font-size: 12px;
+  left: 0;
+  position: absolute;
+  z-index: 101;
+}
+
+.opacity {
+  opacity: 0.7;
+}

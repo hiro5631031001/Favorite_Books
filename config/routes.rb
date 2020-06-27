@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     member do
       get 'bookcase'
+      get 'category'
+      get 'read_log'
     end
   end
   resources :books do

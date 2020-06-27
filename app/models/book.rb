@@ -14,8 +14,8 @@ class Book < ApplicationRecord
             inclusion: { in: ["novel",
                               "management",
                               "economy",
-                              "finance",
-                              "history",
+                              "philosophy",
+                              "psychology",
                               "motivation",
                               "comic",
                               "etc"] }
@@ -25,8 +25,8 @@ class Book < ApplicationRecord
     novel: 1,
     management: 2,
     economy: 3,
-    finance: 4,
-    history: 5,
+    philosophy: 4,
+    psychology: 5,
     motivation: 6,
     comic: 7,
     etc: 8
