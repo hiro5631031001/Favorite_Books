@@ -16,6 +16,6 @@ CarrierWave.configure do |config|
     }
 
     config.fog_directory  = 'favoritebooks'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/fritebooks'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/favoritebooks'
   end
 end
