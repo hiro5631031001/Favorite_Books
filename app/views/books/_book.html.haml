@@ -39,6 +39,14 @@
       -#   - @book.errors.full_messages_for(:category).each do |message|
       -#     %div
       -#       = message
+      .book-detail__top.form-content
+        単行本 or 電子書書籍
+      .book-detail__category-input
+        = f.select :kindle, options_for_select(Book.kindles.keys.map {|k| [I18n.t("enums.book.kindle.#{k}"), k]}, selected: @book.kindle), {}, {class: 'select-box'}
+      -# .error-text
+      -#   - @book.errors.full_messages_for(:kindle).each do |message|
+      -#     %div
+      -#       = message
 
       - if params[:controller] == "books" && params[:action] == "new" || params[:controller] == "books" && params[:action] == "create"
         .book-detail__top.form-content
