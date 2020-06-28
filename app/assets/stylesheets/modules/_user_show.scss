@@ -44,6 +44,31 @@
         }
         .right {
           padding: 40px;
+          width: 100%;
+          .user-books-info {
+            &__box {
+              .books_count {
+                font-size: 20px;
+              }
+              .books_category-box {
+                margin-top: 20px;
+                margin-left: 40px;
+                display: flex;
+                .box1 {
+                  .category-count {
+                    width: 200px;
+                    display: flex;
+                    &__title {
+                      width: 100px;
+                    }
+                    &__integer {
+
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
       .title {
@@ -71,5 +96,3 @@
     }
   }
 }
-
-

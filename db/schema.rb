@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_060415) do
+ActiveRecord::Schema.define(version: 2020_06_28_005208) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_060415) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.integer "kindle"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 

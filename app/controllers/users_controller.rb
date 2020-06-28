@@ -11,6 +11,16 @@ class UsersController < ApplicationController
   def show
     @buy_books = @user.books.where(status: "book_recollection_none").order("created_at DESC").limit(10)
     @readed_books = @user.books.where(status: "book_recollection_exist").order("created_at DESC").limit(10)
+
+    @novels = @user.books.category_novel.all.order("created_at DESC")
+    @managements = @user.books.category_management.all.order("created_at DESC")
+    @economies = @user.books.category_economy.all.order("created_at DESC")
+    @philosophies = @user.books.category_philosophy.all.order("created_at DESC")
+    @psychology = @user.books.category_psychology.all.order("created_at DESC")
+    @motivations = @user.books.category_motivation.all.order("created_at DESC")
+    @comics = @user.books.category_comic.all.order("created_at DESC")
+    @etcs = @user.books.category_etc.all.order("created_at DESC")
+    
   end
 
   def edit
@@ -25,14 +35,14 @@ class UsersController < ApplicationController
   end
 
   def category
-    @novels = @user.books.category_novel.all.order("created_at DESC").limit(8)
-    @managements = @user.books.category_management.all.order("created_at DESC").limit(8)
-    @economies = @user.books.category_economy.all.order("created_at DESC").limit(8)
-    @philosophies = @user.books.category_philosophy.all.order("created_at DESC").limit(8)
-    @psychology = @user.books.category_psychology.all.order("created_at DESC").limit(8)
-    @motivations = @user.books.category_motivation.all.order("created_at DESC").limit(8)
-    @comics = @user.books.category_comic.all.order("created_at DESC").limit(8)
-    @etcs = @user.books.category_etc.all.order("created_at DESC").limit(8)
+    @novels = @user.books.category_novel.all.order("created_at DESC")
+    @managements = @user.books.category_management.all.order("created_at DESC")
+    @economies = @user.books.category_economy.all.order("created_at DESC")
+    @philosophies = @user.books.category_philosophy.all.order("created_at DESC")
+    @psychology = @user.books.category_psychology.all.order("created_at DESC")
+    @motivations = @user.books.category_motivation.all.order("created_at DESC")
+    @comics = @user.books.category_comic.all.order("created_at DESC")
+    @etcs = @user.books.category_etc.all.order("created_at DESC")
   end
 
   def bookcase

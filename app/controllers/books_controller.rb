@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all
   end
 
   def show
-    @book = Book.find(params[:id])
     @recollections = @book.recollections.all
   end
 
@@ -14,24 +14,20 @@ class BooksController < ApplicationController
   end
 
   def create
-    # params[:book][:buy_date] = @buy_date.to_s
     @book = Book.new(book_params)
     @book.save!(book_params)
     redirect_to root_path
  end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id]) 
     @book.update(book_params)
     redirect_to root_path
   end
 
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
     redirect_to root_path
   end
@@ -49,8 +45,13 @@ class BooksController < ApplicationController
                                   :publisher,
                                   :category,
                                   :buy_date,
-                                  :image
+                                  :image,
+                                  :kindle
                                 ).merge(user_id: current_user.id)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
   # def read(result)

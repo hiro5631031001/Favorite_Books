@@ -217,6 +217,10 @@ ja:
         motivation: "自己啓発"
         comic: "マンガ"
         etc: "その他"
+      kindle:
+        "-----": "-----"
+        book_of_lectures: "単行本"
+        kindle: "kindle(電子書籍)"
     recollection:
       read_term:
         "-----": "-----"

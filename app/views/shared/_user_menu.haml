@@ -2,11 +2,15 @@
   .side-bar__main
     %ul.user-menu.block-center
       USER MENU
-      %li.user-menu__list.mypage-link-btn
-        = link_to "トップ" , user_path(@user), class: "text-decoration-none text-color-white"
-      %li.user-menu__list.mypage-link-btn
-        = link_to "読書記録", read_log_user_path(@user), class: "text-decoration-none text-color-white"
-      %li.user-menu__list.mypage-link-btn
-        = link_to "登録本一覧", bookcase_user_path(@user) , class: "text-decoration-none text-color-white"
-      %li.user-menu__list.mypage-link-btn
-        = link_to "カテゴリー", category_user_path(@user), class: "text-decoration-none text-color-white"
+      = link_to user_path(@user) do
+        %li.user-menu__list.mypage-link-btn
+          トップ
+      = link_to read_log_user_path(@user) do
+        %li.user-menu__list.mypage-link-btn
+          読書記録
+      = link_to bookcase_user_path(@user) do
+        %li.user-menu__list.mypage-link-btn
+          登録本一覧
+      = link_to category_user_path(@user) do
+        %li.user-menu__list.mypage-link-btn
+          カテゴリー

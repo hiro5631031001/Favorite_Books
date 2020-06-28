@@ -9,6 +9,7 @@ class Book < ApplicationRecord
   validates :publisher, presence: true
   validates :status, presence: true
   validates :buy_date, presence: true
+  validates :kindle , presence: true
   # validates :buy_date, date: true, allow_blank: true
   validates :category,
             inclusion: { in: ["novel",
@@ -19,6 +20,10 @@ class Book < ApplicationRecord
                               "motivation",
                               "comic",
                               "etc"] }
+
+  validates :kindle,
+            inclusion: { in: ["book_of_lectures",
+                              "kindle"] }
 
   enum category: {
     "-----": 0,
@@ -36,6 +41,12 @@ class Book < ApplicationRecord
     book_recollection_none: 0,
     book_recollection_exist: 1,
     book_following: 2
+  }, _prefix: true
+
+  enum kindle: {
+    "-----": 0,
+    book_of_lectures: 1,
+    kindle: 2
   }, _prefix: true
 
   def book_read

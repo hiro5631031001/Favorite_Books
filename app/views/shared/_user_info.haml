@@ -20,6 +20,48 @@
             .books_count
               = "書籍登録数：" + @user.books.count.to_s + "冊"
             .books_category-box
+              .box1
+                .category-count
+                  .category-count__title
+                    小説
+                  .category-count__integer
+                    = @novels.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    ビジネス
+                  .category-count__integer
+                    = @managements.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    政治・経済
+                  .category-count__integer
+                    = @economies.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    哲学・宗教
+                  .category-count__integer
+                    = @philosophies.count.to_s + "冊"
+              .box1
+                .category-count
+                  .category-count__title
+                    心理学
+                  .category-count__integer
+                    = @psychology.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    自己啓発
+                  .category-count__integer
+                    = @motivations.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    マンガ
+                  .category-count__integer
+                    = @comics.count.to_s + "冊"
+                .category-count
+                  .category-count__title
+                    その他
+                  .category-count__integer
+                    = @etcs.count.to_s + "冊"
 
 
     - if @buy_books.present?
