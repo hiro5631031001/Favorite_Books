@@ -28,14 +28,8 @@ set :keep_releases, 5
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-  task restart: :environment do
-    on roles(:app) do
-      if test("[ -f #{fetch(:unicorn_pid)} ]")
-        reload_unicorn # 再起動タスク→一度起動タスクに変えてデプロイし、元に戻す
-      else
-        start_unicorn  # 起動タスク
-      end
-    end
+  task :restart do
+    invoke 'unicorn:restart'
   end
 
   desc 'upload master.key'
