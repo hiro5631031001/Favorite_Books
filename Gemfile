@@ -80,9 +80,16 @@ gem 'rakuten_web_service'
 
 gem 'devise'
 
+#画像投稿関係
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'enum_help'
 gem 'rails-i18n'
 
 gem 'fog-aws'
+
+# テスト関係gem
+gem 'rspec-rails', '~> 3.5'
+gem 'rails-controller-testing'
+gem 'factory_bot_rails'
+gem 'faker'
