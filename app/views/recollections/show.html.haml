@@ -4,9 +4,10 @@
       .recollection-show__top__title
         %h2
           感想詳細ページ
-        = link_to edit_book_recollection_path(@book,@recollection) do
-          .btn2.link-btn
-            感想を編集する
+        - if current_user.id == @recollection.book.user.id
+          = link_to edit_book_recollection_path(@book,@recollection) do
+            .btn2.link-btn
+              感想を編集する
         .book-title
           .book-title__top.background-blue.text-color-white.padding-10
             タイトル
