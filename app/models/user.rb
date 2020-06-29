@@ -5,6 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :books
-  
   mount_uploader :image, ImageUploader
+
+  validates :nickname,  presence: true
+  validates :email,     presence: true
+  validates :email,     uniqueness: true
+  validates :birth_day, presence: true
+  validates :image,     presence: true
+
+
 end
