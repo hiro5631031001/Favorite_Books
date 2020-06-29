@@ -11,7 +11,6 @@ class Book < ApplicationRecord
   validates :buy_date,   presence: true
   validates :kindle ,    presence: true
   validates :image,      presence: true
-  # validates :buy_date, date: true, allow_blank: true
   validates :category,
             inclusion: { in: ["novel",
                               "management",
@@ -54,5 +53,4 @@ class Book < ApplicationRecord
     self.status = "book_recollection_exist"
     save
   end
-
 end
