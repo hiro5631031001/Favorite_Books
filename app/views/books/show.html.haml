@@ -9,11 +9,15 @@
       .add-btn
     .main_area__info
       %h1.main_area__info__title
-        = "タイトル" + @book.title
-      .main_area__info__author
-        = "著者：#{@book.author}"
-      .main_area__info__publisher
+        = @book.title
+      .main_area__info__detail
+        = "著　者：#{@book.author}"
+      .main_area__info__detail
         = "出版社：#{@book.publisher}"
+      .main_area__info__detail
+        = "購入日：#{@book.buy_date.to_s}"
+      .main_area__info__detail
+        = "書籍タイプ:" + @book.kindle_i18n
       - if user_signed_in? && current_user.id == @book.user_id
         .btn-area
           = link_to edit_book_path(@book) do
