@@ -43,7 +43,7 @@
           感想メモ
         - if @recollection.note.present?
           .note-box
-            = @recollection.note
+            = safe_join(@recollection.note.split("\n"),tag(:br))
         - else
           .note-box-none
             感想メモを書いてみよう
@@ -52,7 +52,7 @@
           引用箇所
         - if @recollection.phrase.present?
           .note-box
-            = @recollection.phrase
+            = safe_join(@recollection.phrase.split("\n"),tag(:br))
         - else
           .note-box-none
             心に残った文章を引用しておこう
