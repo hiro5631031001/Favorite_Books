@@ -32,6 +32,11 @@ class RecollectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @recollection.destroy
+    redirect_to book_path(@recollection.book)
+  end
+
 
   def show
     @recollections = Recollection.where(book_id: @book.id).order("created_at")
