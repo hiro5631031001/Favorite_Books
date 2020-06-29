@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do
     password = Faker::Internet.password(min_length: 6)
     nickname {Faker::Name.last_name}
-    email {Faker::Internet.free_email}
+    sequence(:email) {Faker::Internet.email}
     image {File.open("#{Rails.root}/public/images/usertest.png")}
     birth_day {Faker::Date.birthday}
     password {password}
