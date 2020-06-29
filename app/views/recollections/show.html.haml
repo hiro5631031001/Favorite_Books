@@ -6,8 +6,12 @@
           感想詳細ページ
         - if current_user.id == @recollection.book.user.id
           = link_to edit_book_recollection_path(@book,@recollection) do
-            .btn2.link-btn
+            .btn2.link-btn.margin-bottom12
               感想を編集する
+        - if current_user.id == @recollection.book.user.id
+          = link_to book_recollection_path(@book,@recollection), method: :delete, data: { confirm: '削除しますか？' } do
+            .btn2.link-btn
+              感想を削除する
         -# .book-title
         -#   .book-title__top.background-blue.text-color-white.padding-10
         -#     タイトル
