@@ -1,6 +1,11 @@
 class Recollection < ApplicationRecord
   belongs_to :book
 
+  validates :read_term,     presence: true
+  validates :readed_day,    presence: true
+  validates :point,         presence: true
+  validates :reread_timing, presence: true
+
   enum read_term: {
     "-----": 0,
     one_day: 1,
