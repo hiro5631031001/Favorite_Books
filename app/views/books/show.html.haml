@@ -19,7 +19,7 @@
           = link_to edit_book_path(@book) do
             .btn.link-btn
               編集
-          = link_to book_path(@book), method: :delete do
+          = link_to book_path(@book), method: :delete, data: { confirm: '削除しますか？' } do
             .btn.link-btn
               削除
           = link_to new_book_recollection_path(@book) do
