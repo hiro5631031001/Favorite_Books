@@ -48,7 +48,7 @@
           %div
             = message
 
-      - if @path.is('books#new' || 'books#create')
+      - if @path.is('books#new','books#create')
         .book-detail__top.form-content
           購入日
         .book-detail__buydate-input
@@ -66,7 +66,7 @@
           - @book.errors.full_messages_for(:buy_date).each do |message|
             %div
               = message
-    - if @path.is('book#new' || 'book#create')
+    - if @path.is('books#new' || 'books#create')
       .btn-box
         .btn-box__book-new
           = f.submit " 本を登録する ", class: "submit-btn text-line-none"
