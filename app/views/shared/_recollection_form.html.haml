@@ -40,7 +40,7 @@
       .recollection-phrase__note
         = f.text_area :phrase, placeholder: "実行したいと思った内容を記録しましょう", class: "note-box note-area"
 
-    - if @path.is('recollection#new' || 'recollection#create')
+    - if @path.is('recollections#new' || 'recollections#create')
       .btn-box
         .btn-box__book-new
           = f.submit " 感想を登録する ", class: "submit-btn text-line-none"
