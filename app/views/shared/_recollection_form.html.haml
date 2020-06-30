@@ -25,14 +25,6 @@
       -#   - @recollection.errors.full_messages_for(:rating).each do |message|
       -#     %div
       -#       = message
-      .recollection-detail__top.form-content
-        また読みたい時
-      .recollection-detail__reread_timing
-        = f.select :reread_timing, options_for_select(Recollection.reread_timings.keys.map {|k| [I18n.t("enums.recollection.reread_timing.#{k}"), k]}, selected: @recollection.reread_timing), {}, {class: 'select-box'}
-      -# .error-text
-      -#   - @recollection.errors.full_messages_for(:reread_timing).each do |message|
-      -#     %div
-      -#       = message
 
     .recollection-note
       .recollection-note__top.form-content

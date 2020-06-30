@@ -49,7 +49,6 @@ class RecollectionsController < ApplicationController
                                         :read_term,
                                         :readed_day,
                                         :point,
-                                        :reread_timing,
                                         :phrase,
                                         :note
                                 ).merge(book_id: params[:book_id])

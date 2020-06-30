@@ -4,7 +4,6 @@ class Recollection < ApplicationRecord
   validates :read_term,     presence: true
   validates :readed_day,    presence: true
   validates :point,         presence: true
-  validates :reread_timing, presence: true
 
   enum read_term: {
     "-----": 0,
@@ -24,17 +23,5 @@ class Recollection < ApplicationRecord
     five_points: 5
   }, _prefix: true
 
-  enum reread_timing: {
-    "-----": 0,
-    knowledge: 1,
-    motivation: 2,
-    decision: 3,
-    stress: 4,
-    feel_down: 5,
-    lost_love: 6,
-    diversion: 7,
-    relax: 8,
-    nothing_special: 9
-  }, _prefix: true
 
 end
