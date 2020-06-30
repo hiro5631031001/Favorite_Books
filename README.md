@@ -15,7 +15,7 @@
 また、私自身が大きな本棚を持ちたくても持てない現状であり、オンライン本棚として目に見える形で本棚を作り、その内容を充実させることを楽しみにできるアプリを作りたいとの思いから作成を開始しました。
 
 # DB設計
-<img width="300" alt="個人アプリDB設計" src="https://user-images.githubusercontent.com/60433222/85693037-dcccf200-b710-11ea-8ad8-1246e956efd6.png">
+<img width="300" alt="個人アプリDB設計" src="https://user-images.githubusercontent.com/60433222/86175956-2ed1a580-bb5f-11ea-9e47-81db3e7f7c7e.png">
 
 ## 制作背景
 
