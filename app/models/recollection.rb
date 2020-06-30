@@ -6,14 +6,6 @@ class Recollection < ApplicationRecord
   validates :point,         presence: true
   validates :note,          presence: true, length: { maximum:3000}
   validates :phrase,        length: { maximum:1000 }
-
-  validates :read_term,     numericality: { only_integer: true,
-                                            greater_than_or_equal_to: 1,
-                                            less_than: 6}
-
-  validates :point,         numericality: { only_integer: true,
-                                            greater_than_or_equal_to: 1,
-                                            less_than: 6}
  
   enum read_term: {
     "-----": 0,
