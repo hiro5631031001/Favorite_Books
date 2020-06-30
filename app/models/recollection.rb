@@ -1,6 +1,20 @@
 class Recollection < ApplicationRecord
   belongs_to :book
 
+  validates :read_term,     presence: true
+  validates :readed_day,    presence: true
+  validates :point,         presence: true
+  validates :note,          presence: true, length: { maximum:3000}
+  validates :phrase,        length: { maximum:1000 }
+
+  validates :read_term,     numericality: { only_integer: true,
+                                            greater_than_or_equal_to: 1,
+                                            less_than: 6}
+
+  validates :point,         numericality: { only_integer: true,
+                                            greater_than_or_equal_to: 1,
+                                            less_than: 6}
+ 
   enum read_term: {
     "-----": 0,
     one_day: 1,
@@ -19,17 +33,5 @@ class Recollection < ApplicationRecord
     five_points: 5
   }, _prefix: true
 
-  enum reread_timing: {
-    "-----": 0,
-    knowledge: 1,
-    motivation: 2,
-    decision: 3,
-    stress: 4,
-    feel_down: 5,
-    lost_love: 6,
-    diversion: 7,
-    relax: 8,
-    nothing_special: 9
-  }, _prefix: true
 
 end

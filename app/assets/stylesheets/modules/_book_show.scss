@@ -28,16 +28,17 @@ a {
     }
     &__info {
       &__title {
-        font-size: 18px;
+        font-size: 22px;
         margin-bottom: 12px;
       }
-      &__author{
+      &__detail {
         font-size: 14px;
+        margin-left: 12px;
       }
-      &__publisher {
-        font-size: 14px;
+      // &__publisher {
+      //   font-size: 14px;
 
-      }
+      // }
       &__rate {
         margin-top: 4px;
         height: 32px;

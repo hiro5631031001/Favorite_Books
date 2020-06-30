@@ -32,6 +32,11 @@ class RecollectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @recollection.destroy
+    redirect_to book_path(@recollection.book)
+  end
+
 
   def show
     @recollections = Recollection.where(book_id: @book.id).order("created_at")
@@ -44,7 +49,6 @@ class RecollectionsController < ApplicationController
                                         :read_term,
                                         :readed_day,
                                         :point,
-                                        :reread_timing,
                                         :phrase,
                                         :note
                                 ).merge(book_id: params[:book_id])

@@ -9,70 +9,28 @@
       .add-btn
     .main_area__info
       %h1.main_area__info__title
-        = "タイトル" + @book.title
-      .main_area__info__author
-        = "著者：#{@book.author}"
-      .main_area__info__publisher
+        = @book.title
+      .main_area__info__detail
+        = "著　者：#{@book.author}"
+      .main_area__info__detail
         = "出版社：#{@book.publisher}"
+      .main_area__info__detail
+        = "購入日：#{@book.buy_date.to_s}"
+      .main_area__info__detail
+        = "書籍タイプ:" + @book.kindle_i18n
       - if user_signed_in? && current_user.id == @book.user_id
         .btn-area
           = link_to edit_book_path(@book) do
             .btn.link-btn
               編集
-          = link_to book_path(@book), method: :delete do
+          = link_to book_path(@book), method: :delete, data: { confirm: '削除しますか？' } do
             .btn.link-btn
               削除
           = link_to new_book_recollection_path(@book) do
             .btn2.link-btn
               感想を入力する
-  
-  -# -if @recollections.present?
-  -#   .recollection-title
-  -#     .recollection-title__box.block-center
-  -#       = @book.user.nickname + "さんの感想"
-      
-  -#   .recollection-area
-  -#     .recollection-area__detail
-  -#       .top-box
-  -#         .note-title
-  -#           .note-title__top.background-blue.text-color-white.padding-10.size30-120
-  -#             読んだ日
-  -#           .note-title__date
-  -#             = @recollections.last.readed_day.strftime("%Y年%-m月%-d日")
-  -#         .note-title
-  -#           .note-title__top.background-blue.text-color-white.padding-10.size30-120
-  -#             読んだ期間
-  -#           .note-title__date
-  -#             = @recollections.last.read_term_i18n
-  -#         -# .note-title
-  -#         -#   .note-title__top.background-blue.text-color-white.padding-10.size30-120
-  -#         -#     また読みたい時
-  -#         -#   .note-title__reread-timing
-  -#         -#     = @recollections.last.reread_timing_i18n
-  -#         .note-title
-  -#           .note-title__top.background-blue.text-color-white.padding-10.size30-120
-  -#             評価
-  -#           .note-title__reread-timing
-  -#             = @recollections.last.point_i18n
-        
-  -#       .note
-  -#         -if @recollections.last.note.present?
-  -#           .note-title.background-blue.text-color-white.padding-10.size30-120
-  -#             感想
-  -#           .note__box
-  -#             = @recollections.last.note
 
-  -#         -if @recollections.last.phrase.present?
-  
-  -#           .note-title.background-blue.text-color-white.padding-10.size30-120
-  -#             引用箇所
-  -#           .note__box
-  -#             = @recollections.last.phrase
-  -#       = link_to book_recollection_path(@book, @recollections.last) do
-  -#         .btn3.link-btn
-  -#           感想詳細ページへ
-  
-  -if @recollections.present?
+  - if @recollections.present?
     .recollection-title
       .recollection-title__box.block-center
         = @book.user.nickname + "さんの感想一覧"

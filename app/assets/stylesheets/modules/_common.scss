@@ -112,8 +112,8 @@ a {
   border-radius: 8px;
 }
 
-.background-blue {
-  background-color: rgba(0, 17, 255, 0.637);
+.background-gray {
+  background-color: rgb(68, 63, 63);
   border-radius: 8px;
 }
 
@@ -163,4 +163,13 @@ a {
 
 .opacity {
   opacity: 0.7;
+}
+
+.margin-bottom12 {
+  margin-bottom: 12px;
+}
+
+.error-text {
+  font-size: 12px;
+  color: red;
 }
