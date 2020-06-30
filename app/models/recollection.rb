@@ -4,7 +4,17 @@ class Recollection < ApplicationRecord
   validates :read_term,     presence: true
   validates :readed_day,    presence: true
   validates :point,         presence: true
+  validates :note,          presence: true, length: { in: 1..3000}
+  validates :phrase,        length: { in: 1..1000}
 
+  validates :read_term,     numericality: { only_integer: true,
+                                            greater_than_or_equal_to: 1,
+                                            less_than: 5}
+
+  validates :point,         numericality: { only_integer: true,
+                                            greater_than_or_equal_to: 1,
+                                            less_than: 5}
+ 
   enum read_term: {
     "-----": 0,
     one_day: 1,
