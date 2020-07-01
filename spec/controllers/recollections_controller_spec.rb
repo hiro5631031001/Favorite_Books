@@ -28,6 +28,17 @@ describe RecollectionsController do
     end
   end
 
+  describe 'GET #show' do
+    it "@recollectionに正しい値が入っていること" do
+      get :show, params: { id: recollection, book_id: recollection.book_id}
+      expect(assigns(:recollection)).to eq recollection
+    end
+    it "show.html.hamlに遷移すること" do
+      get :show, params: { id: recollection, book_id: recollection.book_id}
+      expect(response).to render_template :show
+    end
+  end
+
 
 
 
