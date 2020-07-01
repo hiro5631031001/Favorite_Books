@@ -6,6 +6,9 @@ class Recollection < ApplicationRecord
   validates :point,         presence: true
   validates :note,          presence: true, length: { maximum:3000}
   validates :phrase,        length: { maximum:1000 }
+
+  validates :read_term, exclusion: { in: %w(-----) }
+  validates :point, exclusion: { in: %w(-----) }
  
   enum read_term: {
     "-----": 0,
