@@ -16,7 +16,19 @@ describe RecollectionsController do
     end
   end
 
-  
+  describe 'GET #edit' do
+    it "@recollectionに正しい値が入っていること" do
+      get :edit, params: { id: recollection, book_id: recollection.book_id}
+      expect(assigns(:recollection)).to eq recollection
+    end
+
+    it "edit.html.hamlへ遷移するこt" do
+      get :edit, params: { id: recollection, book_id: recollection.book_id}
+      expect(response).to render_template :edit
+    end
+  end
+
+
 
 
 
