@@ -35,11 +35,11 @@ RSpec.describe Recollection, type: :model  do
       expect(recollection.errors[:read_term]).to include("を入力してください")
     end
 
-    it "read_termが0の場合、保存できない" do
-      recollection = FactoryBot.build(:recollection, read_term: 0)
-      recollection.valid?
-      expect(recollection.errors[:read_term]).to include("は1以上の値にしてください")
-    end
+    # it "read_termがの場合、保存できない" do
+    #   recollection = FactoryBot.build(:recollection, read_term: 0)
+    #   recollection.valid?
+    #   expect(recollection.errors[:read_term]).to include("は1以上の値にしてください")
+    # end
 
     it "readed_dayが未入力の場合、保存できない" do
       recollection = FactoryBot.build(:recollection, readed_day: nil)
@@ -53,11 +53,11 @@ RSpec.describe Recollection, type: :model  do
       expect(recollection.errors[:point]).to include("を入力してください")
     end
 
-    it "pointが0の場合、保存できない" do
-      recollection = FactoryBot.build(:recollection, point: 0)
-      recollection.valid?
-      expect(recollection.errors[:point]).to include("は1以上の値にしてください")
-    end
+    # it "pointが0の場合、保存できない" do
+    #   recollection = FactoryBot.build(:recollection, point: 0)
+    #   recollection.valid?
+    #   expect(recollection.errors[:point]).to include("は1以上の値にしてください")
+    # end
 
     it "noteが未入力の場合、保存できない" do
       recollection = FactoryBot.build(:recollection, note: nil)
